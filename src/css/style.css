@@ -1,16 +1,21 @@
 :root {
-  --color-white: #fff;
+  --color-white: #ddfce8;
   --color-black: #000;
   --color-primary: #52a370;
   --color-primary-light: #9ef060;
   --color-primary-dark: #274e36;
   --color-font: #3d7451;
-  --dashboard-padding: 0 8rem;
+  --dashboard-padding: 4rem 8rem;
   --border: 2px solid var(--color-white);
   --background: linear-gradient(
     115.52deg,
-    rgba(255, 255, 255, 0.48) 0%,
-    rgba(255, 255, 255, 0.12) 100%
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  --background-secondary: linear-gradient(
+    115.52deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 100%
   ); }
 
 /* 
@@ -23,22 +28,38 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
 
 .heading-secondary {
   font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic; }
 
 .sub-heading {
   font-weight: 300;
-  color: var(--color-primary-dark); }
+  color: var(--color-primary-dark);
+  display: inline-block; }
+  .sub-heading--bold {
+    font-family: 'Merienda', cursive;
+    font-weight: 700;
+    color: var(--color-font);
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: var(--border);
+    background: var(--background-secondary); }
 
 .link {
-  margin-left: 2rem; }
+  display: inline-block;
+  margin-left: 2rem;
+  transition: all 0.2s ease; }
   .link:link, .link:visited {
     text-decoration: none;
     color: inherit;
     font-weight: 500;
     font-style: italic; }
   .link:hover {
-    transform: translateX(1rem); }
+    transform: translateX(1rem);
+    color: var(--color-font); }
+
+.icon {
+  fill: linear-gradient(180deg, #52a370 0%, #69ba6b 29.69%, #9ef060 100%);
+  cursor: pointer; }
 
 html {
   box-sizing: border-box;
@@ -66,17 +87,25 @@ body {
   background-color: var(--color-primary);
   color: var(--color-white); }
 
+.u-shadow {
+  transition: all 0.2s ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; }
+  .u-shadow:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transform: scale(1.00001); }
+
 .dashboard {
-  height: 71.2rem;
   width: 75vw;
+  min-height: 90vh;
   display: grid;
-  row-gap: 2rem;
+  grid-template-rows: min-content;
   overflow: hidden;
   border-radius: 2.4rem;
   background: var(--background);
-  backdrop-filter: blur(100px);
+  /* backdrop-filter: blur(100px); */
   /* Note: backdrop-filter has minimal browser support */
-  border: var(--border); }
+  border: var(--border);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; }
 
 .header {
   display: flex;
@@ -89,14 +118,18 @@ body {
   background: var(--background); }
 
 .planner {
-  height: 49.2rem;
-  padding: var(--dashboard-padding); }
+  padding: var(--dashboard-padding);
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  grid-template-rows: min-content min-content 1fr;
+  gap: 2rem; }
 
 .question {
-  background-color: orangered;
-  padding: 1rem 1rem;
+  grid-column: 1 / -1;
+  padding: 1rem 1rem 1.1rem 1rem;
   border: var(--border);
   background: var(--background);
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem; }
@@ -105,8 +138,33 @@ body {
     font-family: 'Merienda', cursive;
     font-size: 2.2rem;
     color: var(--color-primary-dark);
-    max-width: 100%;
     border-bottom: 2px solid var(--color-font);
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal; }
+
+.content-box {
+  border: var(--border);
+  background: var(--background);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem; }
+
+.task {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  padding: 0 2rem; }
+  .task__input {
+    width: 100%;
+    outline: 0;
+    font-family: 'Merienda', cursive;
+    font-size: 2.2rem;
+    color: var(--color-primary-dark);
+    border-bottom: 2px solid var(--color-font);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; }
+  .task .icon {
+    margin-left: auto; }

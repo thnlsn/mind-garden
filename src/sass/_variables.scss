@@ -1,5 +1,5 @@
 :root {
-  --color-white: #fff;
+  --color-white: #ddfce8;
   --color-black: #000;
 
   --color-primary: #52a370;
@@ -8,13 +8,19 @@
 
   --color-font: #3d7451;
 
-  --dashboard-padding: 0 8rem;
+  --dashboard-padding: 4rem 8rem;
 
   --border: 2px solid var(--color-white);
 
   --background: linear-gradient(
     115.52deg,
-    rgba(255, 255, 255, 0.48) 0%,
-    rgba(255, 255, 255, 0.12) 100%
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+
+  --background-secondary: linear-gradient(
+    115.52deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 100%
   );
 }

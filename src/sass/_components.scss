@@ -1,17 +1,21 @@
 .dashboard {
-  height: 71.2rem;
   width: 75vw;
+  min-height: 90vh;
+
   display: grid;
-  row-gap: 2rem;
+  grid-template-rows: min-content;
 
   overflow: hidden;
   border-radius: 2.4rem;
 
   background: var(--background);
-  backdrop-filter: blur(100px);
+  /* backdrop-filter: blur(100px); */
   /* Note: backdrop-filter has minimal browser support */
 
   border: var(--border);
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .header {
@@ -29,16 +33,21 @@
 }
 
 .planner {
-  height: 49.2rem;
-
   padding: var(--dashboard-padding);
+
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  grid-template-rows: min-content min-content 1fr;
+  gap: 2rem;
 }
 
 .question {
-  background-color: orangered;
-  padding: 1rem 1rem;
+  grid-column: 1 / -1;
+
+  padding: 1rem 1rem 1.1rem 1rem;
   border: var(--border);
   background: var(--background);
+  border-radius: 1rem;
 
   display: flex;
   flex-direction: column;
@@ -50,12 +59,46 @@
     font-size: 2.2rem;
     color: var(--color-primary-dark);
 
-    max-width: 100%;
+    border-bottom: 2px solid var(--color-font);
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+}
+
+.content-box {
+  border: var(--border);
+  background: var(--background);
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+.task {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  padding: 0 2rem;
+
+  &__input {
+    width: 100%;
+
+    outline: 0;
+    font-family: 'Merienda', cursive;
+    font-size: 2.2rem;
+    color: var(--color-primary-dark);
 
     border-bottom: 2px solid var(--color-font);
 
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
+  }
+
+  .icon {
+    margin-left: auto;
   }
 }

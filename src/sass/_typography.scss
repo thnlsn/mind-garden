@@ -10,17 +10,37 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
 
 .heading-secondary {
   font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
 }
 
 .sub-heading {
   font-weight: 300;
   color: var(--color-primary-dark);
+
+  display: inline-block;
+
+  &--bold {
+    font-family: 'Merienda', cursive;
+    font-weight: 700;
+    color: var(--color-font);
+
+    padding: 1rem 0;
+
+    text-align: center;
+
+    border-bottom: var(--border);
+
+    background: var(--background-secondary);
+  }
 }
 
 .link {
+  display: inline-block;
   margin-left: 2rem;
+
+  transition: all 0.2s ease;
+
   &:link,
   &:visited {
     text-decoration: none;
@@ -30,5 +50,11 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   }
   &:hover {
     transform: translateX(1rem);
+    color: var(--color-font);
   }
+}
+
+.icon {
+  fill: linear-gradient(180deg, #52a370 0%, #69ba6b 29.69%, #9ef060 100%);
+  cursor: pointer;
 }
