@@ -1,0 +1,61 @@
+.dashboard {
+  height: 71.2rem;
+  width: 75vw;
+  display: grid;
+  row-gap: 2rem;
+
+  overflow: hidden;
+  border-radius: 2.4rem;
+
+  background: var(--background);
+  backdrop-filter: blur(100px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border: var(--border);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  padding: var(--dashboard-padding);
+
+  border-bottom: var(--border);
+
+  background: var(--background);
+}
+
+.planner {
+  height: 49.2rem;
+
+  padding: var(--dashboard-padding);
+}
+
+.question {
+  background-color: orangered;
+  padding: 1rem 1rem;
+  border: var(--border);
+  background: var(--background);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__input {
+    outline: 0;
+    font-family: 'Merienda', cursive;
+    font-size: 2.2rem;
+    color: var(--color-primary-dark);
+
+    max-width: 100%;
+
+    border-bottom: 2px solid var(--color-font);
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+}

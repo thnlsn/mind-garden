@@ -4,7 +4,41 @@
   --color-primary: #52a370;
   --color-primary-light: #9ef060;
   --color-primary-dark: #274e36;
-  --color-font: #3d7451; }
+  --color-font: #3d7451;
+  --dashboard-padding: 0 8rem;
+  --border: 2px solid var(--color-white);
+  --background: linear-gradient(
+    115.52deg,
+    rgba(255, 255, 255, 0.48) 0%,
+    rgba(255, 255, 255, 0.12) 100%
+  ); }
+
+/* 
+font-family: 'Merienda', cursive; --------------------- 400;700
+font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
+*/
+.heading-primary {
+  font-family: 'Merienda', cursive;
+  font-size: 6.4rem; }
+
+.heading-secondary {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 400;
+  font-style: italic; }
+
+.sub-heading {
+  font-weight: 300;
+  color: var(--color-primary-dark); }
+
+.link {
+  margin-left: 2rem; }
+  .link:link, .link:visited {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    font-style: italic; }
+  .link:hover {
+    transform: translateX(1rem); }
 
 html {
   box-sizing: border-box;
@@ -20,10 +54,59 @@ html {
 body {
   background-image: url("../images/background.png");
   background-size: cover;
+  min-height: 100vh;
   font-family: 'Montserrat Alternates', sans-serif;
-  font-size: 2.5rem;
-  color: var(--color-font); }
+  font-size: 2.4rem;
+  color: var(--color-font);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 ::selection {
   background-color: var(--color-primary);
   color: var(--color-white); }
+
+.dashboard {
+  height: 71.2rem;
+  width: 75vw;
+  display: grid;
+  row-gap: 2rem;
+  overflow: hidden;
+  border-radius: 2.4rem;
+  background: var(--background);
+  backdrop-filter: blur(100px);
+  /* Note: backdrop-filter has minimal browser support */
+  border: var(--border); }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: var(--dashboard-padding);
+  border-bottom: var(--border);
+  background: var(--background); }
+
+.planner {
+  height: 49.2rem;
+  padding: var(--dashboard-padding); }
+
+.question {
+  background-color: orangered;
+  padding: 1rem 1rem;
+  border: var(--border);
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; }
+  .question__input {
+    outline: 0;
+    font-family: 'Merienda', cursive;
+    font-size: 2.2rem;
+    color: var(--color-primary-dark);
+    max-width: 100%;
+    border-bottom: 2px solid var(--color-font);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; }

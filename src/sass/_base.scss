@@ -14,10 +14,17 @@ html {
 body {
   background-image: url('../images/background.png');
   background-size: cover;
+  min-height: 100vh;
+
   // Set the default font styles, colors, etc.
   font-family: 'Montserrat Alternates', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color: var(--color-font);
+
+  // Layout
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ::selection {

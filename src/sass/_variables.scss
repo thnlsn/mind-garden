@@ -7,4 +7,14 @@
   --color-primary-dark: #274e36;
 
   --color-font: #3d7451;
+
+  --dashboard-padding: 0 8rem;
+
+  --border: 2px solid var(--color-white);
+
+  --background: linear-gradient(
+    115.52deg,
+    rgba(255, 255, 255, 0.48) 0%,
+    rgba(255, 255, 255, 0.12) 100%
+  );
 }
