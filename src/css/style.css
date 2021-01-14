@@ -1,1 +1,25 @@
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary: #52a370;
+  --color-primary-light: #9ef060;
+  --color-primary-dark: #274e36;
+  --color-font: #3d7451; }
 
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+body {
+  background-image: url("../images/background.png");
+  background-size: cover;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-font); }
