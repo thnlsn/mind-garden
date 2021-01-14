@@ -23,3 +23,7 @@ body {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 2.5rem;
   color: var(--color-font); }
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white); }
