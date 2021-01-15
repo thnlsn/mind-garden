@@ -13,6 +13,7 @@ html {
 
 body {
   background-image: url('../images/background.png');
+  background-color: var(--color-primary);
   background-size: cover;
   min-height: 100vh;
 
@@ -50,6 +51,7 @@ body {
 
 .u-text-input {
   outline: 0;
+  border: none;
 
   font-family: 'Merienda', cursive;
   font-size: 2.2rem;

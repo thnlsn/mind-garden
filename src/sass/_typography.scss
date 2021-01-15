@@ -52,6 +52,15 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     transform: translateX(0.75rem);
     color: var(--color-font);
   }
+
+  &__arrow {
+    display: inline-block;
+    transition: all 0.1s ease;
+  }
+
+  &:active > &__arrow {
+    transform: translateX(1rem);
+  }
 }
 
 .icon {

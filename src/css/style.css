@@ -58,6 +58,11 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   .link:hover {
     transform: translateX(0.75rem);
     color: var(--color-font); }
+  .link__arrow {
+    display: inline-block;
+    transition: all 0.1s ease; }
+  .link:active > .link__arrow {
+    transform: translateX(1rem); }
 
 .icon {
   fill: var(--color-font);
@@ -96,6 +101,7 @@ html {
 
 body {
   background-image: url("../images/background.png");
+  background-color: var(--color-primary);
   background-size: cover;
   min-height: 100vh;
   padding: 5vh 0;
@@ -121,6 +127,7 @@ body {
 
 .u-text-input {
   outline: 0;
+  border: none;
   font-family: 'Merienda', cursive;
   font-size: 2.2rem;
   color: var(--color-primary-dark);

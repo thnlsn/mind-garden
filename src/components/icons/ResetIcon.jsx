@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ResetIcon() {
+function ResetIcon({ func }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -9,6 +9,7 @@ function ResetIcon() {
       fill='none'
       viewBox='0 0 35 35'
       className='icon icon--reset'
+      onClick={func}
     >
       <path
         fill='url(#paint0_linear)'
