@@ -5,7 +5,7 @@ const Task = ({ task }) => {
   return (
     <div className='task'>
       <input type='checkbox' className='task__checkbox' />
-      <div className='task__input' contenteditable='true'>
+      <div className='task__input u-text-input' contenteditable='true'>
         {task}
       </div>
       <Delete />

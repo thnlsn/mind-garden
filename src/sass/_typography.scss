@@ -49,12 +49,47 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     font-style: italic;
   }
   &:hover {
-    transform: translateX(1rem);
+    transform: translateX(0.75rem);
     color: var(--color-font);
   }
 }
 
 .icon {
-  fill: linear-gradient(180deg, #52a370 0%, #69ba6b 29.69%, #9ef060 100%);
+  fill: var(--color-font);
   cursor: pointer;
+  display: inline-block;
+
+  transition: all 0.2s ease;
+
+  &--delete {
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(1.05);
+    }
+  }
+
+  &--reset {
+    $size: 4.5rem;
+
+    position: absolute;
+    bottom: 0;
+
+    height: $size;
+    width: $size;
+    padding: 0.75rem;
+
+    transform: translate(0, $size/2);
+    background-color: var(--color-dashboard);
+    border: var(--border);
+    border-radius: 50%;
+
+    &:hover {
+      transform: translate(0, $size/2) rotate(-25deg);
+    }
+    &:active {
+      transform: translate(0, $size/2) rotate(-175deg);
+    }
+  }
 }

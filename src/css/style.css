@@ -2,8 +2,9 @@
   --color-white: #ddfce8;
   --color-black: #000;
   --color-primary: #52a370;
-  --color-primary-light: #9ef060;
+  --color-primary-light: #669979;
   --color-primary-dark: #274e36;
+  --color-dashboard: #aedfa5;
   --color-font: #3d7451;
   --dashboard-padding: 4rem 8rem;
   --border: 2px solid var(--color-white);
@@ -18,6 +19,7 @@
     rgba(255, 255, 255, 0.1) 100%
   ); }
 
+/* --color-primary-light: #9ef060; */
 /* 
 font-family: 'Merienda', cursive; --------------------- 400;700
 font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
@@ -54,12 +56,32 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     font-weight: 500;
     font-style: italic; }
   .link:hover {
-    transform: translateX(1rem);
+    transform: translateX(0.75rem);
     color: var(--color-font); }
 
 .icon {
-  fill: linear-gradient(180deg, #52a370 0%, #69ba6b 29.69%, #9ef060 100%);
-  cursor: pointer; }
+  fill: var(--color-font);
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease; }
+  .icon--delete:hover {
+    transform: scale(1.1); }
+  .icon--delete:active {
+    transform: scale(1.05); }
+  .icon--reset {
+    position: absolute;
+    bottom: 0;
+    height: 4.5rem;
+    width: 4.5rem;
+    padding: 0.75rem;
+    transform: translate(0, 2.25rem);
+    background-color: var(--color-dashboard);
+    border: var(--border);
+    border-radius: 50%; }
+    .icon--reset:hover {
+      transform: translate(0, 2.25rem) rotate(-25deg); }
+    .icon--reset:active {
+      transform: translate(0, 2.25rem) rotate(-175deg); }
 
 html {
   box-sizing: border-box;
@@ -76,12 +98,16 @@ body {
   background-image: url("../images/background.png");
   background-size: cover;
   min-height: 100vh;
+  padding: 5vh 0;
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 2.4rem;
   color: var(--color-font);
   display: flex;
   align-items: center;
   justify-content: center; }
+  @supports (caret-color: #000) {
+    body {
+      caret-color: var(--color-primary-light); } }
 
 ::selection {
   background-color: var(--color-primary);
@@ -91,8 +117,17 @@ body {
   transition: all 0.2s ease;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; }
   .u-shadow:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    transform: scale(1.00001); }
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; }
+
+.u-text-input {
+  outline: 0;
+  font-family: 'Merienda', cursive;
+  font-size: 2.2rem;
+  color: var(--color-primary-dark);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  width: 100%; }
 
 .dashboard {
   width: 75vw;
@@ -115,12 +150,13 @@ body {
   gap: 1rem;
   padding: var(--dashboard-padding);
   border-bottom: var(--border);
-  background: var(--background); }
+  background: var(--background);
+  position: relative; }
 
 .planner {
   padding: var(--dashboard-padding);
   display: grid;
-  grid-template-columns: 1.8fr 1.2fr;
+  grid-template-columns: 1fr 33.333333333%;
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem; }
 
@@ -134,14 +170,9 @@ body {
   flex-direction: column;
   gap: 1rem; }
   .question__input {
-    outline: 0;
-    font-family: 'Merienda', cursive;
-    font-size: 2.2rem;
-    color: var(--color-primary-dark);
     border-bottom: 2px solid var(--color-font);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal; }
+    border-bottom-right-radius: 2.5px;
+    border-bottom-left-radius: 2.5px; }
 
 .content-box {
   border: var(--border);
@@ -149,7 +180,8 @@ body {
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  row-gap: 2.5rem; }
+  row-gap: 2.5rem;
+  padding-bottom: 2rem; }
 
 .task {
   display: flex;
@@ -157,14 +189,12 @@ body {
   align-items: center;
   padding: 0 2rem; }
   .task__input {
-    width: 100%;
-    outline: 0;
-    font-family: 'Merienda', cursive;
-    font-size: 2.2rem;
-    color: var(--color-primary-dark);
-    border-bottom: 2px solid var(--color-font);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal; }
+    border-bottom: 2px solid var(--color-primary-light);
+    border-bottom-right-radius: 2.5px;
+    border-bottom-left-radius: 5px;
+    padding: 0 0.5rem; }
   .task .icon {
     margin-left: auto; }
+
+.notes__input {
+  padding: 0 2rem; }
