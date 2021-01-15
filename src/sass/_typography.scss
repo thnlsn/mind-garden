@@ -110,4 +110,22 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
       transform: translate(0, $size/2) rotate(-175deg);
     }
   }
+
+  &--checked {
+    padding-left: 0.1rem;
+
+    opacity: 0.1;
+    &:hover {
+      opacity: 0.2;
+    }
+  }
+
+  &--unchecked {
+    padding-left: 0.1rem;
+
+    opacity: 1;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
 }

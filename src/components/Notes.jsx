@@ -7,6 +7,7 @@ const Notes = ({ target, notes, title, handleChange }) => {
       <div
         className='notes__input u-text-input'
         spellCheck='false'
+        suppressContentEditableWarning={true}
         contentEditable='true'
         onInput={(e) => handleChange(e, target)}
       >

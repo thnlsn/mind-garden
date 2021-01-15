@@ -7,6 +7,7 @@ const Question = ({ target, question, content, handleChange }) => {
       <div
         className='question__input question__input--content u-text-input'
         spellCheck='false'
+        suppressContentEditableWarning={true}
         contentEditable='true'
         onInput={(e) => handleChange(e, target)}
       >

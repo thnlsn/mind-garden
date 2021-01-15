@@ -35,12 +35,6 @@ function App() {
   };
 
   // TASKS
-  const targetId = (id) => {
-    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
-    const task = tasks.filter((task) => task.id === id);
-    return task;
-  };
-
   const findIndex = (id) => {
     const matchesId = (element) => element.id === id;
     return JSON.parse(localStorage.getItem('tasks')).findIndex(matchesId);
@@ -63,34 +57,43 @@ function App() {
   };
 
   const handleTaskUpdate = (e, id) => {
-    console.log(e.currentTarget.textContent);
+    const indexToUpdate = findIndex(id);
+    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
+    tasks[indexToUpdate].task = e.currentTarget.textContent;
+
+    // Set both state and local storage to the new value
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
     console.log('UPDATE TASK LOCAL STORAGE');
   };
 
-  const handleTaskCheck = (e, id) => {
+  const handleTaskCheck = (id, checked) => {
     const indexToCheck = findIndex(id);
     const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
-    tasks[indexToCheck].checked === true // Is checked TRUE?
+    /*     tasks[indexToCheck].checked === true // Is checked TRUE?
       ? (tasks[indexToCheck].checked = false) // If yes, set to FALSE
-      : (tasks[indexToCheck].checked = true); // If no, set to TRUE
+      : (tasks[indexToCheck].checked = true); // If no, set to TRUE */
+    tasks[indexToCheck].checked = checked !== true; // Flip the bool value
+    /*     tasks[indexToCheck].checked = e.currentTarget.checked === true; */
 
-    setTasks(tasks);
+    // Set both state and local storage to the new value
+    console.log(tasks[indexToCheck].checked);
     localStorage.setItem('tasks', JSON.stringify(tasks));
+    setTasks(tasks);
+    console.log(tasks[indexToCheck].checked);
 
-    console.log(e.currentTarget.checked);
     console.log('UPDATE TASK CHECKED LOCAL STORAGE');
   };
 
   const handleTaskDelete = (id) => {
-    console.log(tasks);
     const indexToRemove = findIndex(id);
     const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
     const newTasks = tasks
       .slice(0, indexToRemove)
       .concat(tasks.slice(indexToRemove + 1, tasks.length));
 
-    setTasks(newTasks);
     localStorage.setItem('tasks', JSON.stringify(newTasks));
+    setTasks(newTasks);
 
     console.log('TASK DELETED FROM LOCAL STORAGE');
   };
@@ -161,3 +164,11 @@ export default App;
   'Eat under 1500 calories',
   'Walk 10,000 steps',
   'Aspernatur maxime dolor itaque, deserunt ullam cum sed consequuntur impedit. Dignissimos ex eius consequuntur unde aut quidem doloremque!'; */
+
+/*   const targetId = (id) => {
+    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
+    const task = tasks.filter((task) => task.id === id);
+    return task;
+  }; */
+
+/*     console.log(e.currentTarget.checked); */
