@@ -76,9 +76,9 @@
 
   display: flex;
   flex-direction: column;
-  row-gap: 2.5rem;
+  row-gap: 2.25rem;
 
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
 }
 
 @keyframes fadeIn {
@@ -97,21 +97,26 @@
   align-items: center;
 
   padding: 0 2rem;
-
-  animation: fadeIn 1s;
-
-  &__input {
-    border-bottom: 2px solid var(--color-primary-light);
-    border-bottom-right-radius: 2.5px;
-    border-bottom-left-radius: 5px;
-    padding: 0 0.5rem;
-  }
+  animation: fadeIn 0.5s;
 
   &__checkbox {
     height: 2.5rem;
     width: 2.5rem;
     border: var(--border);
     border-radius: 5px;
+  }
+
+  &__input {
+    border-bottom: 2px solid var(--color-primary-light);
+    border-bottom-right-radius: 2.5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 0 0.5rem;
+
+    &:focus {
+      background-color: orangered;
+    }
   }
 
   .icon {
