@@ -32,6 +32,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     border-bottom: var(--border);
 
     background: var(--background-secondary);
+
+    position: relative; // For the + icon to be positioned
   }
 }
 
@@ -70,13 +72,20 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
 
   transition: all 0.2s ease;
 
-  &--delete {
+  &--delete,
+  &--add {
     &:hover {
       transform: scale(1.1);
     }
     &:active {
       transform: scale(1.05);
     }
+  }
+
+  &--add {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
   }
 
   &--reset {

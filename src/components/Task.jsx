@@ -1,7 +1,7 @@
 import React from 'react';
 import Delete from './icons/DeleteIcon';
 
-const Task = ({ task, func }) => {
+const Task = ({ task, handleChange }) => {
   return (
     <div className='task'>
       <input type='checkbox' className='task__checkbox' />
@@ -9,9 +9,9 @@ const Task = ({ task, func }) => {
         className='task__input u-text-input'
         spellCheck='false'
         contentEditable='true'
-        onInput={(e) => func(e)}
+        onInput={(e) => handleChange(e)}
       >
-        {task}
+        {task.task}
       </div>
       <Delete />
     </div>

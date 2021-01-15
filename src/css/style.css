@@ -44,7 +44,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     padding: 1rem 0;
     text-align: center;
     border-bottom: var(--border);
-    background: var(--background-secondary); }
+    background: var(--background-secondary);
+    position: relative; }
 
 .link {
   display: inline-block;
@@ -69,10 +70,14 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   cursor: pointer;
   display: inline-block;
   transition: all 0.2s ease; }
-  .icon--delete:hover {
+  .icon--delete:hover, .icon--add:hover {
     transform: scale(1.1); }
-  .icon--delete:active {
+  .icon--delete:active, .icon--add:active {
     transform: scale(1.05); }
+  .icon--add {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem; }
   .icon--reset {
     position: absolute;
     bottom: 0;

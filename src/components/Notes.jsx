@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Notes = ({ notes, title, func }) => {
+const Notes = ({ target, notes, title, handleChange }) => {
   return (
     <div className='content-box notes u-shadow'>
       <div className='sub-heading sub-heading--bold'>{title}</div>
@@ -8,7 +8,7 @@ const Notes = ({ notes, title, func }) => {
         className='notes__input u-text-input'
         spellCheck='false'
         contentEditable='true'
-        onInput={(e) => func(e)}
+        onInput={(e) => handleChange(e, target)}
       >
         {notes}
       </div>

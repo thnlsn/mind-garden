@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Question = ({ question, content, func }) => {
+const Question = ({ target, question, content, handleChange }) => {
   return (
     <div className='question u-shadow'>
       <h4 className='heading-secondary'>{question}</h4>
@@ -8,7 +8,7 @@ const Question = ({ question, content, func }) => {
         className='question__input question__input--content u-text-input'
         spellCheck='false'
         contentEditable='true'
-        onInput={(e) => func(e)}
+        onInput={(e) => handleChange(e, target)}
       >
         {content}
       </div>
