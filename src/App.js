@@ -28,8 +28,26 @@ function App() {
     }
   };
 
+  const handleChange = (e, target) => {
+    let text = e.currentTarget.textContent;
+    localStorage.setItem(target, JSON.stringify(text));
+    console.log('UPDATE LOCAL STORAGE');
+  };
+
+  // TASKS
+  const targetId = (id) => {
+    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
+    const task = tasks.filter((task) => task.id === id);
+    return task;
+  };
+
+  const findIndex = (id) => {
+    const matchesId = (element) => element.id === id;
+    return JSON.parse(localStorage.getItem('tasks')).findIndex(matchesId);
+  };
+
   const handleAdd = () => {
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
     const newTasks = [
       ...tasks,
       {
@@ -44,34 +62,20 @@ function App() {
     console.log('ADDED TASK TO LOCAL STORAGE');
   };
 
-  const handleChange = (e, target) => {
-    let text = e.currentTarget.textContent;
-    localStorage.setItem(target, JSON.stringify(text));
-    console.log('UPDATE LOCAL STORAGE');
-  };
-
-  // TASKS
-  const targetId = (id) => {
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
-    const task = tasks.filter((task) => task.id === id);
-    console.log(task);
-  };
-
-  const findIndex = (id) => {
-    const matchesId = (element) => element.id === id;
-    return JSON.parse(localStorage.getItem('tasks')).findIndex(matchesId);
-  };
-
   const handleTaskUpdate = (e, id) => {
-    targetId(id);
-
     console.log(e.currentTarget.textContent);
     console.log('UPDATE TASK LOCAL STORAGE');
   };
 
   const handleTaskCheck = (e, id) => {
-    targetId(id);
-    findIndex(id);
+    const indexToCheck = findIndex(id);
+    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
+    tasks[indexToCheck].checked === true // Is checked TRUE?
+      ? (tasks[indexToCheck].checked = false) // If yes, set to FALSE
+      : (tasks[indexToCheck].checked = true); // If no, set to TRUE
+
+    setTasks(tasks);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 
     console.log(e.currentTarget.checked);
     console.log('UPDATE TASK CHECKED LOCAL STORAGE');
@@ -80,7 +84,7 @@ function App() {
   const handleTaskDelete = (id) => {
     console.log(tasks);
     const indexToRemove = findIndex(id);
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
     const newTasks = tasks
       .slice(0, indexToRemove)
       .concat(tasks.slice(indexToRemove + 1, tasks.length));
@@ -98,7 +102,7 @@ function App() {
     // Store each piece of local data into a const
     const grateful = JSON.parse(localStorage.getItem('grateful'));
     const goal = JSON.parse(localStorage.getItem('goal'));
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
     const notes = JSON.parse(localStorage.getItem('notes'));
 
     // If that data exists, set state to it, else set it to empty state
