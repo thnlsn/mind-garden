@@ -14,7 +14,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [notes, setNotes] = useState('');
 
-  async function clearData() {
+  const clearData = async () => {
     const confirmed = windowGlobal.confirm(
       'Are you sure you want to clear all the data?'
     );
@@ -26,18 +26,21 @@ function App() {
 
       windowGlobal.location.reload();
     }
-  }
+  };
 
   const handleAdd = () => {
-    setTasks([
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const newTasks = [
       ...tasks,
       {
         id: Math.floor(Math.random() * 10000000),
         checked: false,
         task: '',
       },
-    ]);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    ];
+
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
+    setTasks(newTasks);
     console.log('ADDED TASK TO LOCAL STORAGE');
   };
 
@@ -45,6 +48,47 @@ function App() {
     let text = e.currentTarget.textContent;
     localStorage.setItem(target, JSON.stringify(text));
     console.log('UPDATE LOCAL STORAGE');
+  };
+
+  // TASKS
+  const targetId = (id) => {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const task = tasks.filter((task) => task.id === id);
+    console.log(task);
+  };
+
+  const findIndex = (id) => {
+    const matchesId = (element) => element.id === id;
+    return JSON.parse(localStorage.getItem('tasks')).findIndex(matchesId);
+  };
+
+  const handleTaskUpdate = (e, id) => {
+    targetId(id);
+
+    console.log(e.currentTarget.textContent);
+    console.log('UPDATE TASK LOCAL STORAGE');
+  };
+
+  const handleTaskCheck = (e, id) => {
+    targetId(id);
+    findIndex(id);
+
+    console.log(e.currentTarget.checked);
+    console.log('UPDATE TASK CHECKED LOCAL STORAGE');
+  };
+
+  const handleTaskDelete = (id) => {
+    console.log(tasks);
+    const indexToRemove = findIndex(id);
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const newTasks = tasks
+      .slice(0, indexToRemove)
+      .concat(tasks.slice(indexToRemove + 1, tasks.length));
+
+    setTasks(newTasks);
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
+
+    console.log('TASK DELETED FROM LOCAL STORAGE');
   };
 
   // ADD THIS ON ENTER
@@ -89,8 +133,10 @@ function App() {
         <Tasks
           tasks={tasks}
           title='Tasks'
-          handleChange={handleChange}
+          handleTaskUpdate={handleTaskUpdate}
+          handleTaskCheck={handleTaskCheck}
           handleAdd={handleAdd}
+          handleTaskDelete={handleTaskDelete}
         />
         <Notes
           target={'notes'}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DeleteIcon() {
+function DeleteIcon({ handleTaskDelete, id }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -9,6 +9,9 @@ function DeleteIcon() {
       fill='none'
       viewBox='0 0 24 24'
       className='icon icon--delete'
+      onClick={() => {
+        handleTaskDelete(id);
+      }}
     >
       <path
         fill='url(#paint0_linear)'
