@@ -11,7 +11,7 @@ const Header = ({ title, subtitle, linkText, linkTarget, func }) => {
       </a>
       <div className='sub-heading'>
         Take a moment to plant the seeds for today's success.
-        <a href='#' className='link link--right'>
+        <a href='/about' className='link link--right'>
           Learn more <span className='link__arrow-right'>&rarr;</span>
         </a>
       </div>

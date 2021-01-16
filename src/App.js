@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/style.css';
 
+import About from './components/pages/About';
 import Header from './components/Header';
 import Question from './components/Question';
 import Tasks from './components/Tasks';
@@ -17,7 +18,7 @@ function App() {
 
   const clearData = async () => {
     const confirmed = windowGlobal.confirm(
-      'Are you sure you want to clear all the data?'
+      'Are you sure you want to clear your inputs?'
     );
     if (confirmed) {
       await localStorage.setItem('tasks', JSON.stringify([]));
@@ -116,41 +117,50 @@ function App() {
 
   return (
     <div className='dashboard'>
-      <Header
-        title={'Mind Garden'}
-        subtitle={"Take a moment to plant the seeds for today's success."}
-        linkText={'Learn more'}
-        linkTarget={'#'}
-        func={clearData}
-      />
-      <main className='planner'>
-        <Question
-          target={'grateful'}
-          question={'I am grateful for...'}
-          content={grateful}
-          handleChange={handleChange}
-        />
-        <Question
-          target={'goal'}
-          question={'My goal for today is...'}
-          content={goal}
-          handleChange={handleChange}
-        />
-        <Tasks
-          tasks={tasks}
-          title='Tasks'
-          handleTaskUpdate={handleTaskUpdate}
-          handleTaskCheck={handleTaskCheck}
-          handleAdd={handleAdd}
-          handleTaskDelete={handleTaskDelete}
-        />
-        <Notes
-          target={'notes'}
-          notes={notes}
-          title='Notes'
-          handleChange={handleChange}
-        />
-      </main>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Header
+              title={'Mind Garden'}
+              subtitle={"Take a moment to plant the seeds for today's success."}
+              linkText={'Learn more'}
+              linkTarget={'#'}
+              func={clearData}
+            />
+            <main className='planner'>
+              <Question
+                target={'grateful'}
+                question={'I am grateful for...'}
+                content={grateful}
+                handleChange={handleChange}
+              />
+              <Question
+                target={'goal'}
+                question={'My goal for today is...'}
+                content={goal}
+                handleChange={handleChange}
+              />
+              <Tasks
+                tasks={tasks}
+                title='Tasks'
+                handleTaskUpdate={handleTaskUpdate}
+                handleTaskCheck={handleTaskCheck}
+                handleAdd={handleAdd}
+                handleTaskDelete={handleTaskDelete}
+              />
+              <Notes
+                target={'notes'}
+                notes={notes}
+                title='Notes'
+                handleChange={handleChange}
+              />
+            </main>
+          </Route>
+          <Route path='/about'>
+            <About />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -1,0 +1,78 @@
+.dashboard {
+  width: 75vw;
+  min-height: 90vh;
+
+  display: grid;
+  grid-template-rows: min-content;
+
+  overflow: hidden;
+  border-radius: 2.4rem;
+
+  background: var(--background);
+  /* backdrop-filter: blur(100px); */
+  /* Note: backdrop-filter has minimal browser support */
+
+  border: var(--border);
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  padding: var(--dashboard-padding);
+
+  border-bottom: var(--border);
+
+  background: var(--background);
+
+  position: relative;
+}
+
+.planner {
+  padding: var(--dashboard-padding);
+
+  display: grid;
+  grid-template-columns: 66.6666667% 33.333333333%;
+  grid-template-rows: min-content min-content 1fr;
+  gap: 2rem;
+
+  overflow: hidden; // So that the overflow from the tasks text content doesnt expand the task container squishing everything in the dashboard
+}
+
+.about {
+  padding: 4rem 22rem;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+  color: var(--color-primary-dark);
+
+  &__link {
+    transition: all 0.2s;
+    font-weight: 400;
+
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+
+    &:hover {
+      color: var(--color-font);
+    }
+  }
+
+  &__paragraph {
+    &--right {
+      align-self: flex-end;
+      width: 75%;
+      text-align: right;
+    }
+  }
+}
