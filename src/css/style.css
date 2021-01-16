@@ -265,6 +265,12 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     padding: 0 0.5rem; }
     .question__input:focus {
       box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 6px -6px, rgba(0, 0, 0, 0.06) 0px 4px 4px -4px; }
+    .question__input--grateful:empty::before {
+      opacity: 0.2;
+      content: 'Try to make it something different than yesterday.'; }
+    .question__input--goal:empty::before {
+      opacity: 0.2;
+      content: 'Let this be the one goal you will get done today \2013  no matter what.'; }
 
 .content-box {
   border: var(--border);
@@ -272,7 +278,7 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  row-gap: 2.25rem;
+  row-gap: 3rem;
   padding-bottom: 2.5rem; }
 
 @keyframes fadeIn {
@@ -299,7 +305,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     padding: 0.5rem 0.75rem 0.5rem 0.75rem;
     transition: all 0.25s; }
     .task__input:empty::before {
-      content: '\200b'; }
+      opacity: 0.2;
+      content: 'Keep it specific and attainable.'; }
     .task__input:focus {
       background-color: var(--background-tertiary); }
   .task .icon {
@@ -320,6 +327,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   /* Note: backdrop-filter has minimal browser support */
   border: var(--border);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; }
+  .dashboard .about {
+    grid-template-rows: min-content min-content 1fr; }
 
 .header {
   display: flex;
@@ -342,9 +351,9 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
 
 .about {
   padding: 4rem 22rem 4rem 24rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+  gap: 2rem;
   line-height: 1.6;
   color: var(--color-primary-dark); }
   .about__link {
@@ -355,8 +364,14 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     .about__link:hover {
       color: var(--color-font); }
   .about__paragraph:last-child {
-    margin-top: 4rem;
-    font-size: 2.2rem; }
+    font-size: 2.2rem;
+    margin-top: auto;
+    text-align: center; }
+  .about hr {
+    border: 1px solid var(--color-primary-light);
+    border-radius: 50%;
+    opacity: 0.4;
+    margin: auto 0; }
 
 .socials {
   align-self: flex-end;

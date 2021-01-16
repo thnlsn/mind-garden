@@ -5,7 +5,7 @@ const Question = ({ target, question, content, handleChange }) => {
     <div className='question u-shadow'>
       <h4 className='heading-secondary'>{question}</h4>
       <div
-        className='question__input question__input--content u-text-input'
+        className={`question__input question__input--${target} u-text-input`}
         spellCheck='false'
         suppressContentEditableWarning={true}
         contentEditable='true'

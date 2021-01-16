@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Leaf from '../icons/LeafIcon';
 
 const About = () => {
   return (
-    <div>
+    <Fragment>
       <header className='header'>
         <a href='/' className='heading-primary'>
           Mind Garden
@@ -37,13 +37,14 @@ const About = () => {
           </a>{' '}
           that list out many of the reasons to try it for yourself.
         </p>
+        <hr />
         <p className='about__paragraph'>
           Security and conveniece were at the forefront of this project, and as
           such all data is stored locally. No need to make an account. Just load
           up the page and get going.
         </p>
       </main>
-    </div>
+    </Fragment>
   );
 };
 
