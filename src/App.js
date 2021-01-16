@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/style.css';
 
 import Header from './components/Header';
@@ -98,9 +99,6 @@ function App() {
 
     console.log('TASK DELETED FROM LOCAL STORAGE');
   };
-
-  // ADD THIS ON ENTER
-  /* <div><br></div> */
 
   useEffect(() => {
     // Store each piece of local data into a const

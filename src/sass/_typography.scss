@@ -7,6 +7,15 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   font-family: 'Merienda', cursive;
   font-size: 6.4rem;
   line-height: 1.3;
+
+  position: relative;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+  }
 }
 
 .heading-secondary {
@@ -51,18 +60,29 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     font-weight: 500;
     font-style: italic;
   }
-  &:hover {
+  &--right:hover {
     transform: translateX(0.75rem);
     color: var(--color-font);
   }
+  &--left:hover {
+    transform: translateX(-0.75rem);
+    color: var(--color-font);
+  }
 
-  &__arrow {
+  &__arrow-right {
     display: inline-block;
     transition: all 0.1s ease;
   }
-
-  &:active > &__arrow {
+  &:active > &__arrow-right {
     transform: translateX(1rem);
+  }
+
+  &__arrow-left {
+    display: inline-block;
+    transition: all 0.1s ease;
+  }
+  &:active > &__arrow-left {
+    transform: translateX(-1rem);
   }
 }
 
@@ -92,8 +112,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
 
   &--add {
     position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
+    top: 1.55rem;
+    right: 1.75rem;
   }
 
   &--reset {
@@ -151,4 +171,16 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
       opacity: 0.75;
     }
   }
+}
+
+.leaf-icon {
+  height: 15.5rem;
+  width: 15.5rem;
+  opacity: 0.1;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-60%, -50%) rotate(10deg);
 }
