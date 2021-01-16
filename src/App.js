@@ -172,7 +172,7 @@ function App() {
             <LinkedIn />
           </a>
           <a
-            href='https://github.com/thnlsn'
+            href='https://github.com/thnlsn/mind-garden'
             target='_blank'
             className='span about__link'
           >

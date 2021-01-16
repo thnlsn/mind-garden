@@ -37,7 +37,7 @@ const About = () => {
           </a>{' '}
           that list out many of the reasons to try it for yourself.
         </p>
-        <p className='about__paragraph about__paragraph--right'>
+        <p className='about__paragraph'>
           Security and conveniece were at the forefront of this project, and as
           such all data is stored locally. No need to make an account. Just load
           up the page and get going.

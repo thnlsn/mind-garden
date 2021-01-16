@@ -341,7 +341,7 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   overflow: hidden; }
 
 .about {
-  padding: 4rem 22rem;
+  padding: 4rem 22rem 4rem 24rem;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -354,10 +354,9 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
       color: inherit; }
     .about__link:hover {
       color: var(--color-font); }
-  .about__paragraph--right {
-    align-self: flex-end;
-    width: 75%;
-    text-align: right; }
+  .about__paragraph:last-child {
+    margin-top: 4rem;
+    font-size: 2.2rem; }
 
 .socials {
   align-self: flex-end;
