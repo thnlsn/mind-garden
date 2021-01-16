@@ -19,14 +19,8 @@ const Task = ({
           id={task.id}
         />
       </div>
-      {/*       <input
-        type='checkbox'
-        defaultChecked={task.checked}
-        className='task__checkbox'
-        onInput={(e) => handleTaskCheck(e, task.id)}
-      /> */}
       <div
-        className={`task__input ${
+        className={`task__input u-text-input ${
           task.checked === true ? 'u-strikethrough' : ''
         }`}
         spellCheck='false'

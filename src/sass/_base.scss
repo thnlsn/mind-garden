@@ -58,6 +58,7 @@ body {
   font-size: 2.2rem;
   color: var(--color-primary-dark);
 
+  overflow: auto;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
@@ -79,10 +80,8 @@ body {
   opacity: 0.2;
 
   position: relative;
-  &::first-line {
-    text-decoration-color: currentColor !important;
-    text-decoration: line-through;
-  }
+  text-decoration-color: currentColor !important;
+  text-decoration: line-through;
 
   /*   &::after {
     content: '';
