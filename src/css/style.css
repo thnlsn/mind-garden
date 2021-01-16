@@ -358,8 +358,11 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     align-self: flex-end;
     width: 75%;
     text-align: right; }
-  .about__socials {
-    margin-top: auto;
-    align-self: flex-end;
-    display: flex;
-    column-gap: 2rem; }
+
+.socials {
+  align-self: flex-end;
+  display: flex;
+  column-gap: 2rem;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 1.5rem; }

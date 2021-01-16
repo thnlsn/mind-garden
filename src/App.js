@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/style.css';
 
+import LinkedIn from './components/icons/LinkedInIcon';
+import Github from './components/icons/GithubIcon';
+
 import About from './components/pages/About';
 import Header from './components/Header';
 import Question from './components/Question';
@@ -160,6 +163,22 @@ function App() {
             <About />
           </Route>
         </Switch>
+        <div className='socials'>
+          <a
+            href='https://www.linkedin.com/in/thnlsn/'
+            target='_blank'
+            className='span about__link'
+          >
+            <LinkedIn />
+          </a>
+          <a
+            href='https://github.com/thnlsn'
+            target='_blank'
+            className='span about__link'
+          >
+            <Github />
+          </a>
+        </div>
       </Router>
     </div>
   );

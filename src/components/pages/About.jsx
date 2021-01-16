@@ -1,7 +1,5 @@
 import React from 'react';
 import Leaf from '../icons/LeafIcon';
-import LinkedIn from '../icons/LinkedInIcon';
-import Github from '../icons/GithubIcon';
 
 const About = () => {
   return (
@@ -44,22 +42,6 @@ const About = () => {
           such all data is stored locally. No need to make an account. Just load
           up the page and get going.
         </p>
-        <div className='about__socials'>
-          <a
-            href='https://www.linkedin.com/in/thnlsn/'
-            target='_blank'
-            className='span about__link'
-          >
-            <LinkedIn />
-          </a>
-          <a
-            href='https://github.com/thnlsn'
-            target='_blank'
-            className='span about__link'
-          >
-            <Github />
-          </a>
-        </div>
       </main>
     </div>
   );
