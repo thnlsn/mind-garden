@@ -66,6 +66,12 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   }
 }
 
+.task {
+  font-family: 'Merienda', cursive;
+  font-size: 2.2rem;
+  color: var(--color-primary-dark);
+}
+
 .icon {
   fill: var(--color-font);
   cursor: pointer;
@@ -101,23 +107,30 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     padding: 0.75rem;
 
     transform: translate(0, $size/2);
+
     background-color: var(--color-dashboard);
     border: var(--border);
     border-radius: 50%;
 
     & > path {
-      transition: 0.2s;
+      transition: 0.25s opacity;
       opacity: 0.8;
     }
 
+    @keyframes reset {
+      100% {
+        transform: translate(0, $size/2) rotate(-360deg);
+      }
+    }
+
     &:hover {
-      transform: translate(0, $size/2) rotate(-25deg);
+      transform: translate(0, $size/2) rotate(-36deg);
       & > path {
         opacity: 1;
       }
     }
     &:active {
-      transform: translate(0, $size/2) rotate(-175deg);
+      animation: reset 0.25s forwards;
     }
   }
 

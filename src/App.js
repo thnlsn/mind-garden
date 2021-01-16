@@ -29,7 +29,8 @@ function App() {
   };
 
   const handleChange = (e, target) => {
-    let text = e.currentTarget.textContent;
+    let text = e.currentTarget.innerHTML;
+    console.log(e.currentTarget.value);
     localStorage.setItem(target, JSON.stringify(text));
     console.log('UPDATE LOCAL STORAGE');
   };

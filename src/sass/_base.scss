@@ -63,4 +63,35 @@ body {
   white-space: normal;
 
   width: 100%;
+  height: 100%;
+}
+
+.u-strikethrough {
+  @keyframes strike {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  transition: all 0.25s linear 0.25s;
+  opacity: 0.2;
+
+  position: relative;
+  &::after::first-letter {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary-dark);
+    animation-name: strike;
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(1, -0.04, 0.43, 1.21);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 }

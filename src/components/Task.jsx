@@ -26,10 +26,12 @@ const Task = ({
         onInput={(e) => handleTaskCheck(e, task.id)}
       /> */}
       <div
-        className='task__input u-text-input'
+        className={`task__input ${
+          task.checked === true ? 'u-strikethrough' : ''
+        }`}
         spellCheck='false'
         suppressContentEditableWarning={true}
-        contentEditable='true'
+        contentEditable={!task.checked}
         onInput={(e) => handleTaskUpdate(e, task.id)}
       >
         {task.task}

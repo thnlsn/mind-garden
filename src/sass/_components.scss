@@ -38,9 +38,11 @@
   padding: var(--dashboard-padding);
 
   display: grid;
-  grid-template-columns: 1fr 33.333333333%;
+  grid-template-columns: 66.6666667% 33.333333333%;
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem;
+
+  overflow: hidden; // So that the overflow from the tasks text content doesnt expand the task container squishing everything in the dashboard
 }
 
 // COMPONENTS
@@ -62,9 +64,19 @@
   gap: 1rem;
 
   &__input {
-    border-bottom: 2px solid var(--color-font);
+    transition: all 0.25s;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -25px,
+      rgba(0, 0, 0, 0.04) 0px 10px 10px -10px;
+
+    &:focus {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 6px -6px,
+        rgba(0, 0, 0, 0.06) 0px 4px 4px -4px;
+    }
+
+    // border-bottom: 1px solid var(--color-primary-light);
     border-bottom-right-radius: 2.5px;
     border-bottom-left-radius: 2.5px;
+    padding: 0 0.5rem;
   }
 }
 
@@ -111,6 +123,19 @@
     border-bottom: 1px solid var(--color-primary-light);
     border-radius: 5px;
     padding: 0.25rem 0.5rem 0 0.5rem;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+    outline: 0;
+    border: none;
+
+    &:empty::before {
+      content: '\200b';
+    }
 
     transition: all 0.25s;
     &:focus {
