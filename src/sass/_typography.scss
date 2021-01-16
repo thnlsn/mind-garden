@@ -125,9 +125,9 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
 
     &:hover {
       transform: translate(0, $size/2) rotate(-36deg);
-      & > path {
+      /*       & > path {
         opacity: 1;
-      }
+      } */
     }
     &:active {
       animation: reset 0.25s forwards;

@@ -33,8 +33,9 @@ const Task = ({
         suppressContentEditableWarning={true}
         contentEditable={!task.checked}
         onInput={(e) => handleTaskUpdate(e, task.id)}
+        dangerouslySetInnerHTML={{ __html: task.task }}
       >
-        {task.task}
+        {/* {task.task} */}
       </div>
       <Delete handleTaskDelete={handleTaskDelete} id={task.id} />
     </div>

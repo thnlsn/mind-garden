@@ -10,8 +10,9 @@ const Notes = ({ target, notes, title, handleChange }) => {
         suppressContentEditableWarning={true}
         contentEditable='true'
         onInput={(e) => handleChange(e, target)}
+        dangerouslySetInnerHTML={{ __html: notes }}
       >
-        {notes}
+        {/* {notes} */}
       </div>
     </div>
   );

@@ -10,8 +10,9 @@ const Question = ({ target, question, content, handleChange }) => {
         suppressContentEditableWarning={true}
         contentEditable='true'
         onInput={(e) => handleChange(e, target)}
+        dangerouslySetInnerHTML={{ __html: content }}
       >
-        {content}
+        {/*{content}*/}
       </div>
     </div>
   );

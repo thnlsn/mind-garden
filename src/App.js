@@ -29,8 +29,8 @@ function App() {
   };
 
   const handleChange = (e, target) => {
-    let text = e.currentTarget.innerHTML;
-    console.log(e.currentTarget.value);
+    let text = `${e.currentTarget.innerHTML}`;
+
     localStorage.setItem(target, JSON.stringify(text));
     console.log('UPDATE LOCAL STORAGE');
   };
@@ -60,7 +60,7 @@ function App() {
   const handleTaskUpdate = (e, id) => {
     const indexToUpdate = findIndex(id);
     const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
-    tasks[indexToUpdate].task = e.currentTarget.textContent;
+    tasks[indexToUpdate].task = `${e.currentTarget.innerHTML}`;
 
     // Set both state and local storage to the new value
     localStorage.setItem('tasks', JSON.stringify(tasks));

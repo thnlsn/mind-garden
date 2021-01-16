@@ -76,11 +76,15 @@ body {
     }
   }
 
-  transition: all 0.25s linear 0.25s;
   opacity: 0.2;
 
   position: relative;
-  &::after::first-letter {
+  &::first-line {
+    text-decoration-color: currentColor !important;
+    text-decoration: line-through;
+  }
+
+  /*   &::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -93,5 +97,5 @@ body {
     animation-timing-function: cubic-bezier(1, -0.04, 0.43, 1.21);
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-  }
+  } */
 }
