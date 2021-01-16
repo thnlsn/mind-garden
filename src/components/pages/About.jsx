@@ -1,5 +1,7 @@
 import React from 'react';
 import Leaf from '../icons/LeafIcon';
+import LinkedIn from '../icons/LinkedInIcon';
+import Github from '../icons/GithubIcon';
 
 const About = () => {
   return (
@@ -28,8 +30,12 @@ const About = () => {
         <p className='about__paragraph'>
           The effects of practicing gratitude is well-researched and massively
           beneficial to nearly every aspect of your life.{' '}
-          <a href='#' className='span about__link'>
-            Here is a collection of over 40 studies
+          <a
+            href='https://www.happierhuman.com/the-science-of-gratitude/'
+            target='_blank'
+            className='span about__link'
+          >
+            Here is a collection of over 26 studies
           </a>{' '}
           that list out many of the reasons to try it for yourself.
         </p>
@@ -38,6 +44,22 @@ const About = () => {
           such all data is stored locally. No need to make an account. Just load
           up the page and get going.
         </p>
+        <div className='about__socials'>
+          <a
+            href='https://www.linkedin.com/in/thnlsn/'
+            target='_blank'
+            className='span about__link'
+          >
+            <LinkedIn />
+          </a>
+          <a
+            href='https://github.com/thnlsn'
+            target='_blank'
+            className='span about__link'
+          >
+            <Github />
+          </a>
+        </div>
       </main>
     </div>
   );

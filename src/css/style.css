@@ -129,11 +129,11 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   cursor: pointer;
   display: inline-block;
   transition: all 0.2s ease-in-out; }
-  .icon--delete, .icon--add {
+  .icon--delete, .icon--add, .icon--social {
     opacity: 0.65; }
-    .icon--delete:hover, .icon--add:hover {
+    .icon--delete:hover, .icon--add:hover, .icon--social:hover {
       opacity: 0.85; }
-    .icon--delete:active, .icon--add:active {
+    .icon--delete:active, .icon--add:active, .icon--social:active {
       opacity: 1; }
   .icon--add {
     position: absolute;
@@ -173,6 +173,10 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     opacity: 1; }
     .icon--unchecked:hover {
       opacity: 0.75; }
+  .icon--social {
+    height: 3.5rem;
+    width: 3.5rem;
+    opacity: 0.5; }
 
 .leaf-icon {
   height: 15.5rem;
@@ -341,6 +345,7 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+  line-height: 1.6;
   color: var(--color-primary-dark); }
   .about__link {
     transition: all 0.2s;
@@ -353,3 +358,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     align-self: flex-end;
     width: 75%;
     text-align: right; }
+  .about__socials {
+    margin-top: auto;
+    align-self: flex-end;
+    display: flex;
+    column-gap: 2rem; }
