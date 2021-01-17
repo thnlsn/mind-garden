@@ -159,6 +159,10 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     border: var(--border);
 
     overflow: visible;
+    @supports not (overflow: visible) {
+      overflow-x: visible;
+      overflow-y: visible;
+    }
     border-radius: 50%;
 
     & > path {

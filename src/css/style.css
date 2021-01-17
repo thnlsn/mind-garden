@@ -178,6 +178,10 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     border: var(--border);
     overflow: visible;
     border-radius: 50%; }
+    @supports not (overflow: visible) {
+      .icon--reset {
+        overflow-x: visible;
+        overflow-y: visible; } }
     .icon--reset > path {
       opacity: 0.8;
       transform: translateX(1px); }
@@ -391,6 +395,10 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
       border-radius: 0; } }
   .dashboard .about {
     grid-template-rows: min-content min-content 1fr; }
+  @supports not (overflow: hidden) {
+    .dashboard {
+      overflow-x: hidden;
+      overflow-y: hidden; } }
 
 .header {
   display: flex;
@@ -414,10 +422,15 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
 .planner {
   padding: var(--dashboard-padding);
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem;
-  overflow: hidden; }
+  /* 
+  overflow: hidden; // So that the overflow from the tasks text content doesnt expand the task container squishing everything in the dashboard
+  @supports not (overflow: hidden) {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  } */ }
   @media only screen and (max-width: 62.5em) {
     .planner {
       padding-left: 4rem;
@@ -434,7 +447,7 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
       margin-right: 2rem; } }
   @media only screen and (max-width: 50em) {
     .planner {
-      grid-template-columns: 1fr; }
+      grid-template-columns: minmax(0, 1fr); }
       @supports not (gap: 1px) {
         .planner .content-box:not(:last-child) {
           margin-right: 0rem;
