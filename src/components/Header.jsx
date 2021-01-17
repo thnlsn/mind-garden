@@ -2,7 +2,7 @@ import React from 'react';
 import Reset from './icons/ResetIcon';
 import Leaf from './icons/LeafIcon';
 
-const Header = ({ title, subtitle, linkText, linkTarget, func }) => {
+const Header = ({ title, subtitle, linkText, linkTarget, clearData }) => {
   return (
     <header className='header'>
       <a href='/' className='heading-primary'>
@@ -15,7 +15,7 @@ const Header = ({ title, subtitle, linkText, linkTarget, func }) => {
           Learn more <span className='link__arrow-right'>&rarr;</span>
         </a>
       </div>
-      <Reset func={func} />
+      <Reset clearData={clearData} />
     </header>
   );
 };

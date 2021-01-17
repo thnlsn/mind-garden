@@ -128,7 +128,7 @@ function App() {
               subtitle={"Take a moment to plant the seeds for today's success."}
               linkText={'Learn more'}
               linkTarget={'#'}
-              func={clearData}
+              clearData={clearData}
             />
             <main className='planner'>
               <Question
