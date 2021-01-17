@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Socials from './Socials';
 import Leaf from '../icons/LeafIcon';
 
-const About = () => {
+const About = ({ linkedIn, gitHub }) => {
   return (
     <Fragment>
       <header className='header'>
@@ -44,7 +44,7 @@ const About = () => {
           such all data is stored locally. No need to make an account. Just load
           up the page and get going.
         </p>
-        <Socials />
+        <Socials linkedIn={linkedIn} gitHub={gitHub} />
       </main>
     </Fragment>
   );

@@ -160,6 +160,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     .icon--delete:hover, .icon--add:hover, .icon--social:hover {
       opacity: 0.85; }
     .icon--delete:active, .icon--add:active, .icon--social:active {
+      transition: all 0.1s;
+      transform: scale(0.9);
       opacity: 1; }
   .icon--add {
     position: absolute;

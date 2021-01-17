@@ -2,9 +2,6 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/style.css';
 
-import LinkedIn from './components/icons/LinkedInIcon';
-import Github from './components/icons/GithubIcon';
-
 import About from './components/pages/About';
 import Header from './components/Header';
 import Question from './components/Question';
@@ -163,7 +160,10 @@ function App() {
               </main>
             </Route>
             <Route path='/about'>
-              <About />
+              <About
+                linkedIn={'https://www.linkedin.com/in/thnlsn/'}
+                gitHub={'https://github.com/thnlsn/mind-garden'}
+              />
             </Route>
           </Switch>
         </Router>

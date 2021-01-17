@@ -1,23 +1,15 @@
 import React from 'react';
 import LinkedIn from '../icons/LinkedInIcon';
-import Github from '../icons/GithubIcon';
+import GitHub from '../icons/GitHubIcon';
 
-const Socials = () => {
+const Socials = ({ linkedIn, gitHub }) => {
   return (
     <div className='socials'>
-      <a
-        href='https://www.linkedin.com/in/thnlsn/'
-        target='_blank'
-        className='span about__link'
-      >
+      <a href={linkedIn} target='_blank' className='span about__link'>
         <LinkedIn />
       </a>
-      <a
-        href='https://github.com/thnlsn/mind-garden'
-        target='_blank'
-        className='span about__link'
-      >
-        <Github />
+      <a href={gitHub} target='_blank' className='span about__link'>
+        <GitHub />
       </a>
     </div>
   );
