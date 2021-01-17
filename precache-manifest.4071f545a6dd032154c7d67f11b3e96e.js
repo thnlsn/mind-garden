@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2f1600b1a0124ddd365ba0e8337653c8",
+    "revision": "e692bd9e8cf3f83a99a60279a1429d08",
     "url": "/mind-garden/index.html"
   },
   {
-    "revision": "e9eafdfab869eaa22394",
-    "url": "/mind-garden/static/css/main.0bdecf4c.chunk.css"
+    "revision": "1079f7ee0b6ce446fec6",
+    "url": "/mind-garden/static/css/main.6432966a.chunk.css"
   },
   {
-    "revision": "c7c26d8876760262a6d0",
-    "url": "/mind-garden/static/js/2.bae1d651.chunk.js"
+    "revision": "676fa203a807734d30bc",
+    "url": "/mind-garden/static/js/2.6612cc99.chunk.js"
   },
   {
     "revision": "9b318b6fb13190fe82c0677e9264b3c7",
-    "url": "/mind-garden/static/js/2.bae1d651.chunk.js.LICENSE.txt"
+    "url": "/mind-garden/static/js/2.6612cc99.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e9eafdfab869eaa22394",
-    "url": "/mind-garden/static/js/main.aa0adc3c.chunk.js"
+    "revision": "1079f7ee0b6ce446fec6",
+    "url": "/mind-garden/static/js/main.77845c39.chunk.js"
   },
   {
     "revision": "58c20bf31b1b9f1ee8c2",
