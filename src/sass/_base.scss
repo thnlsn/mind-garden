@@ -1,6 +1,28 @@
+// RESPONSIVE BREAKPOINTS
+// ----------------------- (x / 16) where x = desired breakpoint in px
+$bp-largest: 87.5em; // ---- 1400px
+$bp-large: 75em; // ---- 1200px
+$bp-medium: 62.5em; // --- 1000px
+$bp-small: 50em; // -- 800px
+$bp-smallest: 37.5em; // ---- 600px
+
+$bp-phone-large: 31.25em; // ---- 500px
+$bp-phone-medium: 25em; // ---- 400px
+
 html {
   box-sizing: border-box; // Border-box is always good
   font-size: 62.5%; // 1rem = 10px, 10px / 16px = 62.5%
+
+  // GLOBAL SPACING MEDIA QUERY
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 56.25%;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 48.5%;
+  }
+  @media only screen and (max-width: $bp-phone-large) {
+    font-size: 48.5%;
+  }
 }
 
 *,
@@ -18,6 +40,9 @@ body {
   min-height: 100vh;
 
   padding: 5vh 0; // Height of the dashboard is 90vh, so together adds to 100vh
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 0;
+  }
 
   // Set the default font styles, colors, etc.
   font-family: 'Montserrat Alternates', sans-serif;
@@ -28,6 +53,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
 
   @supports (caret-color: #000) {
     caret-color: var(--color-primary-light);

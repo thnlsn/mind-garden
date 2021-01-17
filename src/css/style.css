@@ -26,6 +26,15 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 87.5em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 62.5em) {
+    html {
+      font-size: 48.5%; } }
+  @media only screen and (max-width: 31.25em) {
+    html {
+      font-size: 48.5%; } }
 
 *,
 *::before,
@@ -45,7 +54,11 @@ body {
   color: var(--color-font);
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
+  @media only screen and (max-width: 37.5em) {
+    body {
+      padding: 0; } }
   @supports (caret-color: #000) {
     body {
       caret-color: var(--color-primary-light); } }
@@ -62,6 +75,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   font-family: 'Merienda', cursive;
   font-size: 6.4rem;
   line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
   position: relative; }
   .heading-primary:link, .heading-primary:visited {
     text-decoration: none;
@@ -78,13 +93,13 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
 .sub-heading {
   font-weight: 300;
   color: var(--color-primary-dark);
-  display: inline-block; }
+  display: inline-block;
+  text-align: center; }
   .sub-heading--bold {
     font-family: 'Merienda', cursive;
     font-weight: 700;
     color: var(--color-font);
     padding: 1rem 0;
-    text-align: center;
     border-bottom: var(--border);
     background: var(--background-secondary);
     position: relative; }
@@ -346,6 +361,14 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   /* Note: backdrop-filter has minimal browser support */
   border: var(--border);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; }
+  @media only screen and (max-width: 75em) {
+    .dashboard {
+      width: 90vw; } }
+  @media only screen and (max-width: 37.5em) {
+    .dashboard {
+      min-height: 100vh;
+      width: 100vw;
+      border-radius: 0; } }
   .dashboard .about {
     grid-template-rows: min-content min-content 1fr; }
 
@@ -359,23 +382,40 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   border-bottom: var(--border);
   background: var(--background);
   position: relative; }
+  @media only screen and (max-width: 62.5em) {
+    .header {
+      padding-left: 4rem;
+      padding-right: 4rem; } }
 
 .planner {
   padding: var(--dashboard-padding);
   display: grid;
-  grid-template-columns: 66.6666667% 33.333333333%;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem;
   overflow: hidden; }
+  @media only screen and (max-width: 62.5em) {
+    .planner {
+      padding-left: 4rem;
+      padding-right: 4rem; } }
+  @media only screen and (max-width: 50em) {
+    .planner {
+      grid-template-columns: 1fr; } }
 
 .about {
   animation: fadeIn 0.75s;
-  padding: 3.5rem 22rem 3.5rem 24rem;
+  padding: 3.5rem 20rem 3.5rem 22rem;
   display: grid;
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem;
   line-height: 1.6;
   color: var(--color-primary-dark); }
+  @media only screen and (max-width: 87.5em) {
+    .about {
+      padding: 3.5rem 12rem 3.5rem 14rem; } }
+  @media only screen and (max-width: 62.5em) {
+    .about {
+      padding: 3.5rem 6rem 3.5rem 6rem; } }
   .about__link {
     transition: all 0.2s;
     font-weight: 400; }
@@ -397,6 +437,10 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   align-self: flex-end;
   display: flex;
   column-gap: 2rem;
-  position: fixed;
+  position: absolute;
   bottom: 0.5rem;
-  right: 1.5rem; }
+  right: 1.25rem; }
+  @media only screen and (max-width: 75em) {
+    .socials {
+      flex-direction: column;
+      row-gap: 2rem; } }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/style.css';
 
@@ -119,68 +119,72 @@ function App() {
   }, []);
 
   return (
-    <div className='dashboard'>
-      <Router>
-        <Switch>
-          <Route exact path='/'>
-            <Header
-              title={'Mind Garden'}
-              subtitle={"Take a moment to plant the seeds for today's success."}
-              linkText={'Learn more'}
-              linkTarget={'#'}
-              clearData={clearData}
-            />
-            <main className='planner'>
-              <Question
-                target={'grateful'}
-                question={'I am grateful for...'}
-                content={grateful}
-                handleChange={handleChange}
+    <Fragment>
+      <div className='dashboard'>
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+              <Header
+                title={'Mind Garden'}
+                subtitle={
+                  "Take a moment to plant the seeds for today's success."
+                }
+                linkText={'Learn more'}
+                linkTarget={'#'}
+                clearData={clearData}
               />
-              <Question
-                target={'goal'}
-                question={'My goal for today is...'}
-                content={goal}
-                handleChange={handleChange}
-              />
-              <Tasks
-                tasks={tasks}
-                title='Tasks'
-                handleTaskUpdate={handleTaskUpdate}
-                handleTaskCheck={handleTaskCheck}
-                handleAdd={handleAdd}
-                handleTaskDelete={handleTaskDelete}
-              />
-              <Notes
-                target={'notes'}
-                notes={notes}
-                title='Notes'
-                handleChange={handleChange}
-              />
-            </main>
-          </Route>
-          <Route path='/about'>
-            <About />
-          </Route>
-        </Switch>
-        <div className='socials'>
-          <a
-            href='https://www.linkedin.com/in/thnlsn/'
-            target='_blank'
-            className='span about__link'
-          >
-            <LinkedIn />
-          </a>
-          <a
-            href='https://github.com/thnlsn/mind-garden'
-            target='_blank'
-            className='span about__link'
-          >
-            <Github />
-          </a>
-        </div>
-      </Router>
-    </div>
+              <main className='planner'>
+                <Question
+                  target={'grateful'}
+                  question={'I am grateful for...'}
+                  content={grateful}
+                  handleChange={handleChange}
+                />
+                <Question
+                  target={'goal'}
+                  question={'My goal for today is...'}
+                  content={goal}
+                  handleChange={handleChange}
+                />
+                <Tasks
+                  tasks={tasks}
+                  title='Tasks'
+                  handleTaskUpdate={handleTaskUpdate}
+                  handleTaskCheck={handleTaskCheck}
+                  handleAdd={handleAdd}
+                  handleTaskDelete={handleTaskDelete}
+                />
+                <Notes
+                  target={'notes'}
+                  notes={notes}
+                  title='Notes'
+                  handleChange={handleChange}
+                />
+              </main>
+            </Route>
+            <Route path='/about'>
+              <About />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+      <div className='socials'>
+        <a
+          href='https://www.linkedin.com/in/thnlsn/'
+          target='_blank'
+          className='span about__link'
+        >
+          <LinkedIn />
+        </a>
+        <a
+          href='https://github.com/thnlsn/mind-garden'
+          target='_blank'
+          className='span about__link'
+        >
+          <Github />
+        </a>
+      </div>
+    </Fragment>
   );
 }
 

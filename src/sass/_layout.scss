@@ -2,6 +2,17 @@
   width: 75vw;
   min-height: 90vh;
 
+  @media only screen and (max-width: $bp-large) {
+    width: 90vw;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    min-height: 100vh;
+    width: 100vw;
+    border-radius: 0;
+  }
+  @media only screen and (max-width: $bp-phone-large) {
+  }
+
   display: grid;
   grid-template-rows: min-content;
 
@@ -30,6 +41,10 @@
   gap: 1.5rem;
 
   padding: var(--dashboard-padding);
+  @media only screen and (max-width: $bp-medium) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 
   border-bottom: var(--border);
 
@@ -39,19 +54,28 @@
 }
 
 .planner {
+  @media only screen and (max-width: $bp-medium) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   padding: var(--dashboard-padding);
 
   display: grid;
-  grid-template-columns: 66.6666667% 33.333333333%;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr;
+  }
 
   overflow: hidden; // So that the overflow from the tasks text content doesnt expand the task container squishing everything in the dashboard
 }
 
 .about {
   animation: fadeIn 0.75s;
-  padding: 3.5rem 22rem 3.5rem 24rem;
+  padding: 3.5rem 20rem 3.5rem 22rem;
 
   display: grid;
   grid-template-rows: min-content min-content 1fr;
@@ -60,6 +84,13 @@
   line-height: 1.6;
 
   color: var(--color-primary-dark);
+
+  @media only screen and (max-width: $bp-largest) {
+    padding: 3.5rem 12rem 3.5rem 14rem;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3.5rem 6rem 3.5rem 6rem;
+  }
 
   &__link {
     transition: all 0.2s;
@@ -95,7 +126,12 @@
   display: flex;
   column-gap: 2rem;
 
-  position: fixed;
+  @media only screen and (max-width: $bp-large) {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  position: absolute;
   bottom: 0.5rem;
-  right: 1.5rem;
+  right: 1.25rem;
 }
