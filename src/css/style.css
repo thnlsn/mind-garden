@@ -34,7 +34,7 @@ html {
       font-size: 48.5%; } }
   @media only screen and (max-width: 31.25em) {
     html {
-      font-size: 48.5%; } }
+      font-size: 46.75%; } }
 
 *,
 *::before,
@@ -78,6 +78,14 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   text-align: center;
   white-space: nowrap;
   position: relative; }
+  @media only screen and (max-width: 31.25em) {
+    .heading-primary {
+      font-size: 6rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem; } }
+  @media only screen and (max-width: 25em) {
+    .heading-primary {
+      font-size: 4.5rem; } }
   .heading-primary:link, .heading-primary:visited {
     text-decoration: none;
     color: inherit;
@@ -385,7 +393,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   @media only screen and (max-width: 62.5em) {
     .header {
       padding-left: 4rem;
-      padding-right: 4rem; } }
+      padding-right: 4rem;
+      padding-top: 4rem; } }
 
 .planner {
   padding: var(--dashboard-padding);
@@ -398,6 +407,11 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     .planner {
       padding-left: 4rem;
       padding-right: 4rem; } }
+  @media only screen and (max-width: 31.25em) {
+    .planner {
+      padding-bottom: 2rem;
+      padding-left: 2rem;
+      padding-right: 2rem; } }
   @media only screen and (max-width: 50em) {
     .planner {
       grid-template-columns: 1fr; } }

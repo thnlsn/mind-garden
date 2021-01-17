@@ -7,7 +7,7 @@ $bp-small: 50em; // -- 800px
 $bp-smallest: 37.5em; // ---- 600px
 
 $bp-phone-large: 31.25em; // ---- 500px
-$bp-phone-medium: 25em; // ---- 400px
+$bp-phone-small: 25em; // ---- 400px
 
 html {
   box-sizing: border-box; // Border-box is always good
@@ -21,7 +21,7 @@ html {
     font-size: 48.5%;
   }
   @media only screen and (max-width: $bp-phone-large) {
-    font-size: 48.5%;
+    font-size: 46.75%;
   }
 }
 

@@ -10,6 +10,15 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   text-align: center;
   white-space: nowrap;
 
+  @media only screen and (max-width: $bp-phone-large) {
+    font-size: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  @media only screen and (max-width: $bp-phone-small) {
+    font-size: 4.5rem;
+  }
+
   position: relative;
 
   &:link,
