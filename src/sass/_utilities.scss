@@ -66,3 +66,27 @@
       animation-fill-mode: forwards;
     } */
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes settleDown {
+  from {
+    transform: calc(var(--reset-position) - 0.5rem);
+  }
+  to {
+    transform: var(--reset-position);
+  }
+}
+
+@keyframes reset {
+  100% {
+    transform: var(--reset-position) rotate(-720deg);
+  }
+}

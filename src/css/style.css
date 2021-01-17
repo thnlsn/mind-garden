@@ -6,7 +6,7 @@
   --color-primary-dark: #274e36;
   --color-dashboard: #aedfa5;
   --color-font: #3d7451;
-  --dashboard-padding: 3.5rem 8rem;
+  --dashboard-padding: 3.25rem 8rem 3.5rem 8rem;
   --border: 2px solid var(--color-white);
   --background: linear-gradient(
     115.52deg,
@@ -18,7 +18,9 @@
     rgba(255, 255, 255, 0.1) 0%,
     rgba(255, 255, 255, 0.1) 100%
   );
-  --background-tertiary: rgba(255, 255, 255, 0.1); }
+  --background-tertiary: rgba(255, 255, 255, 0.1);
+  --reset-position: translate(0, calc(var(--size) / 2 - 0.25rem));
+  --size: 4.5rem; }
 
 /* --color-primary-light: #9ef060; */
 html {
@@ -65,6 +67,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     text-decoration: none;
     color: inherit;
     font-weight: 700; }
+  .heading-primary:hover > .leaf-icon {
+    transform: translate(-60%, -52.5%) rotate(15.5deg); }
 
 .heading-secondary {
   font-family: 'Montserrat Alternates', sans-serif;
@@ -142,22 +146,19 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   .icon--reset {
     position: absolute;
     bottom: 0;
-    height: 4.5rem;
-    width: 4.5rem;
+    height: var(--size);
+    width: var(--size);
     padding: 0.75rem;
-    transform: translate(0, 2.25rem);
+    transform: var(--reset-position);
     background-color: var(--color-dashboard);
     border: var(--border);
+    overflow: visible;
     border-radius: 50%; }
     .icon--reset > path {
-      transition: 0.25s opacity;
-      opacity: 0.8; }
-
-@keyframes reset {
-  100% {
-    transform: translate(0, 2.25rem) rotate(-360deg); } }
+      opacity: 0.8;
+      transform: translateX(1px); }
     .icon--reset:hover {
-      transform: translate(0, 2.25rem) rotate(-36deg);
+      transform: var(--reset-position) rotate(-45deg);
       /*       & > path {
         opacity: 1;
       } */ }
@@ -182,10 +183,11 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   height: 15.5rem;
   width: 15.5rem;
   opacity: 0.3;
-  z-index: -1;
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: -1;
+  transition: all 0.75s;
   transform: translate(-60%, -52.5%) rotate(10deg); }
 
 .unselectable {
@@ -248,7 +250,24 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   100% {
     width: 100%; } }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes settleDown {
+  from {
+    transform: calc(var(--reset-position) - 0.5rem); }
+  to {
+    transform: var(--reset-position); } }
+
+@keyframes reset {
+  100% {
+    transform: var(--reset-position) rotate(-720deg); } }
+
 .question {
+  animation: fadeIn 0.75s;
   grid-column: 1 / -1;
   padding: 1rem 1rem 1.1rem 1rem;
   border: var(--border);
@@ -273,19 +292,16 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
       content: 'Let this be the one goal you will get done today \2013  no matter what.'; }
 
 .content-box {
+  animation: fadeIn 0.75s;
   border: var(--border);
   background: var(--background);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 2rem;
   padding-bottom: 2.5rem; }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
+  .content-box:first-child {
+    margin-bottom: 1rem; }
 
 .task {
   display: flex;
@@ -313,7 +329,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     margin-left: auto; }
 
 .notes__input {
-  padding: 0 2rem; }
+  padding: 0 2rem;
+  line-height: 1.9; }
 
 .dashboard {
   width: 75vw;
@@ -350,7 +367,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   overflow: hidden; }
 
 .about {
-  padding: 4rem 22rem 4rem 24rem;
+  animation: fadeIn 0.75s;
+  padding: 3.5rem 22rem 3.5rem 24rem;
   display: grid;
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem;

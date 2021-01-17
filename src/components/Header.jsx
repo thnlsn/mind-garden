@@ -5,8 +5,8 @@ import Leaf from './icons/LeafIcon';
 const Header = ({ title, subtitle, linkText, linkTarget, func }) => {
   return (
     <header className='header'>
-      <a href='#' className='heading-primary'>
-        Mind Garden
+      <a href='/' className='heading-primary'>
+        <span className='header__text'>Mind Garden</span>
         <Leaf />
       </a>
       <div className='sub-heading'>

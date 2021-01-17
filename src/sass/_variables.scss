@@ -9,7 +9,7 @@
   --color-dashboard: #aedfa5;
   --color-font: #3d7451;
 
-  --dashboard-padding: 3.5rem 8rem;
+  --dashboard-padding: 3.25rem 8rem 3.5rem 8rem;
 
   --border: 2px solid var(--color-white);
 
@@ -26,6 +26,9 @@
   );
 
   --background-tertiary: rgba(255, 255, 255, 0.1);
+
+  --reset-position: translate(0, calc(var(--size) / 2 - 0.25rem));
+  --size: 4.5rem;
 }
 
 /* --color-primary-light: #9ef060; */

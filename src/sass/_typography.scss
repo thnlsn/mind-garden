@@ -16,6 +16,10 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     color: inherit;
     font-weight: 700;
   }
+
+  &:hover > .leaf-icon {
+    transform: translate(-60%, -52.5%) rotate(15.5deg);
+  }
 }
 
 .heading-secondary {
@@ -130,34 +134,28 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   }
 
   &--reset {
-    $size: 4.5rem;
-
     position: absolute;
     bottom: 0;
 
-    height: $size;
-    width: $size;
+    height: var(--size);
+    width: var(--size);
     padding: 0.75rem;
 
-    transform: translate(0, $size/2);
+    transform: var(--reset-position);
 
     background-color: var(--color-dashboard);
     border: var(--border);
+
+    overflow: visible;
     border-radius: 50%;
 
     & > path {
-      transition: 0.25s opacity;
       opacity: 0.8;
-    }
-
-    @keyframes reset {
-      100% {
-        transform: translate(0, $size/2) rotate(-360deg);
-      }
+      transform: translateX(1px); // Slightly off center, so this centers it
     }
 
     &:hover {
-      transform: translate(0, $size/2) rotate(-36deg);
+      transform: var(--reset-position) rotate(-45deg);
       /*       & > path {
         opacity: 1;
       } */
@@ -197,11 +195,12 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   width: 15.5rem;
   opacity: 0.3;
 
-  z-index: -1;
-
   position: absolute;
   top: 50%;
   left: 50%;
 
+  z-index: -1;
+
+  transition: all 0.75s;
   transform: translate(-60%, -52.5%) rotate(10deg);
 }
