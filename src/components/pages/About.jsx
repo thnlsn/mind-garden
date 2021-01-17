@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import Socials from './Socials';
 import Leaf from '../icons/LeafIcon';
 
@@ -6,14 +7,14 @@ const About = ({ title, subtitle, linkText, homeLink, linkedIn, gitHub }) => {
   return (
     <Fragment>
       <header className='header'>
-        <a href={homeLink} className='heading-primary'>
+        <Link to={homeLink} className='heading-primary'>
           {title}
           <Leaf />
-        </a>
+        </Link>
         <div className='sub-heading'>
-          <a href={homeLink} className='link link--left'>
+          <Link to={homeLink} className='link link--left'>
             <span className='link__arrow-left'>&larr;</span> {linkText}
-          </a>
+          </Link>
           {subtitle}
         </div>
       </header>

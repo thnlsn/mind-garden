@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Reset from './icons/ResetIcon';
 import Leaf from './icons/LeafIcon';
 
@@ -12,15 +13,15 @@ const Header = ({
 }) => {
   return (
     <header className='header'>
-      <a href={homeLink} className='heading-primary'>
+      <Link to={homeLink} className='heading-primary'>
         <span className='header__text'>{title}</span>
         <Leaf />
-      </a>
+      </Link>
       <div className='sub-heading'>
         {subtitle}
-        <a href={aboutLink} className='link link--right'>
+        <Link to={aboutLink} className='link link--right'>
           {linkText} <span className='link__arrow-right'>&rarr;</span>
-        </a>
+        </Link>
       </div>
       <Reset clearData={clearData} />
     </header>
