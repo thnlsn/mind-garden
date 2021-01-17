@@ -32,6 +32,7 @@ const About = ({ linkedIn, gitHub }) => {
           <a
             href='https://www.happierhuman.com/the-science-of-gratitude/'
             target='_blank'
+            rel='noopener noreferrer'
             className='span about__link'
           >
             Here is a collection of over 26 studies

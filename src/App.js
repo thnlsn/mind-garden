@@ -34,7 +34,6 @@ function App() {
     let text = `${e.currentTarget.innerHTML}`;
 
     localStorage.setItem(target, JSON.stringify(text));
-    console.log('UPDATE LOCAL STORAGE');
   };
 
   // TASKS
@@ -56,7 +55,6 @@ function App() {
 
     localStorage.setItem('tasks', JSON.stringify(newTasks));
     setTasks(newTasks);
-    console.log('ADDED TASK TO LOCAL STORAGE');
   };
 
   const handleTaskUpdate = (e, id) => {
@@ -66,8 +64,6 @@ function App() {
 
     // Set both state and local storage to the new value
     localStorage.setItem('tasks', JSON.stringify(tasks));
-
-    console.log('UPDATE TASK LOCAL STORAGE');
   };
 
   const handleTaskCheck = (id, checked) => {
@@ -80,12 +76,9 @@ function App() {
     /*     tasks[indexToCheck].checked = e.currentTarget.checked === true; */
 
     // Set both state and local storage to the new value
-    console.log(tasks[indexToCheck].checked);
+
     localStorage.setItem('tasks', JSON.stringify(tasks));
     setTasks(tasks);
-    console.log(tasks[indexToCheck].checked);
-
-    console.log('UPDATE TASK CHECKED LOCAL STORAGE');
   };
 
   const handleTaskDelete = (id) => {
@@ -97,8 +90,6 @@ function App() {
 
     localStorage.setItem('tasks', JSON.stringify(newTasks));
     setTasks(newTasks);
-
-    console.log('TASK DELETED FROM LOCAL STORAGE');
   };
 
   useEffect(() => {
@@ -186,5 +177,3 @@ export default App;
     const task = tasks.filter((task) => task.id === id);
     return task;
   }; */
-
-/*     console.log(e.currentTarget.checked); */

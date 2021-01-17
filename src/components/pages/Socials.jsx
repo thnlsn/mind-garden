@@ -5,10 +5,20 @@ import GitHub from '../icons/GitHubIcon';
 const Socials = ({ linkedIn, gitHub }) => {
   return (
     <div className='socials'>
-      <a href={linkedIn} target='_blank' className='span about__link'>
+      <a
+        href={linkedIn}
+        target='_blank'
+        rel='noopener noreferrer'
+        className='span about__link'
+      >
         <LinkedIn />
       </a>
-      <a href={gitHub} target='_blank' className='span about__link'>
+      <a
+        href={gitHub}
+        target='_blank'
+        rel='noopener noreferrer'
+        className='span about__link'
+      >
         <GitHub />
       </a>
     </div>
