@@ -32,6 +32,8 @@
     border-bottom-left-radius: 2.5px;
     padding: 0 0.5rem;
 
+    cursor: text;
+
     &--grateful:empty::before {
       opacity: 0.2;
       content: 'Try to make it something different than yesterday.';
@@ -83,6 +85,8 @@
     border-bottom: 1px solid var(--color-primary-light);
     border-radius: 5px;
     padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+
+    cursor: text;
 
     &:empty::before {
       opacity: 0.2;

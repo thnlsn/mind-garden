@@ -307,7 +307,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -25px, rgba(0, 0, 0, 0.04) 0px 10px 10px -10px;
     border-bottom-right-radius: 2.5px;
     border-bottom-left-radius: 2.5px;
-    padding: 0 0.5rem; }
+    padding: 0 0.5rem;
+    cursor: text; }
     .question__input:focus {
       box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 6px -6px, rgba(0, 0, 0, 0.06) 0px 4px 4px -4px; }
     .question__input--grateful:empty::before {
@@ -345,6 +346,7 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     border-bottom: 1px solid var(--color-primary-light);
     border-radius: 5px;
     padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+    cursor: text;
     transition: all 0.25s; }
     .task__input:empty::before {
       opacity: 0.2;
