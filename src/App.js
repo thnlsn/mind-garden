@@ -168,22 +168,6 @@ function App() {
           </Switch>
         </Router>
       </div>
-      <div className='socials'>
-        <a
-          href='https://www.linkedin.com/in/thnlsn/'
-          target='_blank'
-          className='span about__link'
-        >
-          <LinkedIn />
-        </a>
-        <a
-          href='https://github.com/thnlsn/mind-garden'
-          target='_blank'
-          className='span about__link'
-        >
-          <Github />
-        </a>
-      </div>
     </Fragment>
   );
 }

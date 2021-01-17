@@ -54,8 +54,6 @@ body {
   align-items: center;
   justify-content: center;
 
-  position: relative;
-
   @supports (caret-color: #000) {
     caret-color: var(--color-primary-light);
   }

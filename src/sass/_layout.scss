@@ -125,17 +125,7 @@
 }
 
 .socials {
-  align-self: flex-end;
-
+  justify-self: center;
   display: flex;
   column-gap: 2rem;
-
-  @media only screen and (max-width: $bp-large) {
-    flex-direction: column;
-    row-gap: 2rem;
-  }
-
-  position: absolute;
-  bottom: 0.5rem;
-  right: 1.25rem;
 }
