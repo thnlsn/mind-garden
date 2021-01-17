@@ -2,19 +2,19 @@ import React, { Fragment } from 'react';
 import Socials from './Socials';
 import Leaf from '../icons/LeafIcon';
 
-const About = ({ linkTarget, linkedIn, gitHub }) => {
+const About = ({ title, subtitle, linkText, homeLink, linkedIn, gitHub }) => {
   return (
     <Fragment>
       <header className='header'>
-        <a href={linkTarget} className='heading-primary'>
-          Mind Garden
+        <a href={homeLink} className='heading-primary'>
+          {title}
           <Leaf />
         </a>
         <div className='sub-heading'>
-          <a href='/mind-garden' className='link link--left'>
-            <span className='link__arrow-left'>&larr;</span> Back
+          <a href={homeLink} className='link link--left'>
+            <span className='link__arrow-left'>&larr;</span> {linkText}
           </a>
-          A little gratitude can go a long way.
+          {subtitle}
         </div>
       </header>
       <main className='about'>

@@ -107,17 +107,19 @@ function App() {
   }, []);
 
   const home = '/mind-garden';
+  const about = '/mind-garden/about';
 
   return (
     <div className='dashboard'>
       <Router>
         <Switch>
-          <Route path={home}>
+          <Route exact path={home}>
             <Header
               title={'Mind Garden'}
               subtitle={"Take a moment to plant the seeds for today's success."}
               linkText={'Learn more'}
-              linkTarget={home}
+              homeLink={home}
+              aboutLink={about}
               clearData={clearData}
             />
             <main className='planner'>
@@ -149,9 +151,12 @@ function App() {
               />
             </main>
           </Route>
-          <Route path='/about'>
+          <Route path={about}>
             <About
-              linkTarget={home}
+              title={'Mind Garden'}
+              subtitle={'A little gratitude can go a long way.'}
+              linkText={'Back'}
+              homeLink={home}
               linkedIn={'https://www.linkedin.com/in/thnlsn/'}
               gitHub={'https://github.com/thnlsn/mind-garden'}
             />
