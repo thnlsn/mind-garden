@@ -38,6 +38,12 @@
   justify-content: center;
   gap: 1.5rem;
 
+  @supports not (gap: 1px) {
+    a {
+      margin-bottom: 1.5rem;
+    }
+  }
+
   padding: var(--dashboard-padding);
   @media only screen and (max-width: $bp-medium) {
     padding-left: 4rem;
@@ -69,6 +75,9 @@
   grid-template-columns: 2fr 1fr;
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem;
+  h1 {
+    margin-bottom: 1.5rem;
+  }
 
   @media only screen and (max-width: $bp-small) {
     grid-template-columns: 1fr;
@@ -127,5 +136,5 @@
 .socials {
   justify-self: center;
   display: flex;
-  column-gap: 2rem;
+  gap: 2rem;
 }
