@@ -75,12 +75,25 @@
   grid-template-columns: 2fr 1fr;
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem;
-  h1 {
-    margin-bottom: 1.5rem;
+
+  @supports not (gap: 1px) {
+    .question {
+      margin-bottom: 2rem;
+    }
+    .content-box:not(:last-child) {
+      margin-right: 2rem;
+    }
   }
 
   @media only screen and (max-width: $bp-small) {
     grid-template-columns: 1fr;
+
+    @supports not (gap: 1px) {
+      .content-box:not(:last-child) {
+        margin-right: 0rem;
+        margin-bottom: 2rem;
+      }
+    }
   }
 
   overflow: hidden; // So that the overflow from the tasks text content doesnt expand the task container squishing everything in the dashboard
@@ -93,6 +106,13 @@
   display: grid;
   grid-template-rows: min-content min-content 1fr;
   gap: 2rem;
+
+  @supports not (gap: 1px) {
+    // Select all paragraphs except the last child
+    & > p:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
 
   line-height: 1.6;
 
@@ -137,4 +157,10 @@
   justify-self: center;
   display: flex;
   gap: 2rem;
+
+  @supports not (gap: 1px) {
+    & > *:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
 }

@@ -344,7 +344,7 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   animation: fadeIn 0.5s; }
   @supports not (gap: 1px) {
     .task > *:not(:last-child) {
-      margin-right: 1.75; } }
+      margin-right: 1.75rem; } }
   .task__checkbox {
     height: 2.5rem;
     width: 2.5rem;
@@ -427,11 +427,18 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
       padding-bottom: 2rem;
       padding-left: 2rem;
       padding-right: 2rem; } }
-  .planner h1 {
-    margin-bottom: 1.5rem; }
+  @supports not (gap: 1px) {
+    .planner .question {
+      margin-bottom: 2rem; }
+    .planner .content-box:not(:last-child) {
+      margin-right: 2rem; } }
   @media only screen and (max-width: 50em) {
     .planner {
-      grid-template-columns: 1fr; } }
+      grid-template-columns: 1fr; }
+      @supports not (gap: 1px) {
+        .planner .content-box:not(:last-child) {
+          margin-right: 0rem;
+          margin-bottom: 2rem; } } }
 
 .about {
   animation: fadeIn 0.75s;
@@ -441,6 +448,9 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   gap: 2rem;
   line-height: 1.6;
   color: var(--color-primary-dark); }
+  @supports not (gap: 1px) {
+    .about > p:not(:last-child) {
+      margin-bottom: 2rem; } }
   @media only screen and (max-width: 87.5em) {
     .about {
       padding: 3.5rem 12rem 3.5rem 14rem; } }
@@ -468,3 +478,6 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   justify-self: center;
   display: flex;
   gap: 2rem; }
+  @supports not (gap: 1px) {
+    .socials > *:not(:last-child) {
+      margin-right: 2rem; } }

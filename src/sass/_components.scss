@@ -86,7 +86,7 @@
   @supports not (gap: 1px) {
     // Select all except the last child
     & > *:not(:last-child) {
-      margin-right: 1.75;
+      margin-right: 1.75rem;
     }
   }
 
