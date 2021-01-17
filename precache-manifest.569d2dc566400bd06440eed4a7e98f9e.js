@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f06cc0acc2c3a8b6ef6d12b044be23ba",
+    "revision": "ae165a1524a823ba26b363bcff204f25",
     "url": "/mind-garden/index.html"
   },
   {
-    "revision": "16432a23e18e743bf3fe",
+    "revision": "399bf48b0647df3f8bed",
     "url": "/mind-garden/static/css/main.0bdecf4c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mind-garden/static/js/2.bae1d651.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "16432a23e18e743bf3fe",
-    "url": "/mind-garden/static/js/main.ec844403.chunk.js"
+    "revision": "399bf48b0647df3f8bed",
+    "url": "/mind-garden/static/js/main.f526a081.chunk.js"
   },
   {
     "revision": "58c20bf31b1b9f1ee8c2",
