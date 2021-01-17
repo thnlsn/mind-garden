@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mind-garden/static/css/main.6432966a.chunk.css",
+    "main.css": "/mind-garden/static/css/main.4b13c2db.chunk.css",
     "main.js": "/mind-garden/static/js/main.77845c39.chunk.js",
     "main.js.map": "/mind-garden/static/js/main.77845c39.chunk.js.map",
     "runtime-main.js": "/mind-garden/static/js/runtime-main.275fdfe0.js",
@@ -8,16 +8,16 @@
     "static/js/2.6612cc99.chunk.js": "/mind-garden/static/js/2.6612cc99.chunk.js",
     "static/js/2.6612cc99.chunk.js.map": "/mind-garden/static/js/2.6612cc99.chunk.js.map",
     "index.html": "/mind-garden/index.html",
-    "precache-manifest.4071f545a6dd032154c7d67f11b3e96e.js": "/mind-garden/precache-manifest.4071f545a6dd032154c7d67f11b3e96e.js",
+    "precache-manifest.c4f105fd45f51d1b75350e156d22d480.js": "/mind-garden/precache-manifest.c4f105fd45f51d1b75350e156d22d480.js",
     "service-worker.js": "/mind-garden/service-worker.js",
-    "static/css/main.6432966a.chunk.css.map": "/mind-garden/static/css/main.6432966a.chunk.css.map",
+    "static/css/main.4b13c2db.chunk.css.map": "/mind-garden/static/css/main.4b13c2db.chunk.css.map",
     "static/js/2.6612cc99.chunk.js.LICENSE.txt": "/mind-garden/static/js/2.6612cc99.chunk.js.LICENSE.txt",
     "static/media/style.css": "/mind-garden/static/media/background.942a0ec8.png"
   },
   "entrypoints": [
     "static/js/runtime-main.275fdfe0.js",
     "static/js/2.6612cc99.chunk.js",
-    "static/css/main.6432966a.chunk.css",
+    "static/css/main.4b13c2db.chunk.css",
     "static/js/main.77845c39.chunk.js"
   ]
 }
