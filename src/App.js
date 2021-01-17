@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/style.css';
 
@@ -106,60 +106,59 @@ function App() {
     notes ? setNotes(notes) : setNotes('');
   }, []);
 
+  const home = '/mind-garden';
+
   return (
-    <Fragment>
-      <div className='dashboard'>
-        <Router>
-          <Switch>
-            <Route exact path='/'>
-              <Header
-                title={'Mind Garden'}
-                subtitle={
-                  "Take a moment to plant the seeds for today's success."
-                }
-                linkText={'Learn more'}
-                linkTarget={'#'}
-                clearData={clearData}
+    <div className='dashboard'>
+      <Router>
+        <Switch>
+          <Route path={home}>
+            <Header
+              title={'Mind Garden'}
+              subtitle={"Take a moment to plant the seeds for today's success."}
+              linkText={'Learn more'}
+              linkTarget={home}
+              clearData={clearData}
+            />
+            <main className='planner'>
+              <Question
+                target={'grateful'}
+                question={'I am grateful for...'}
+                content={grateful}
+                handleChange={handleChange}
               />
-              <main className='planner'>
-                <Question
-                  target={'grateful'}
-                  question={'I am grateful for...'}
-                  content={grateful}
-                  handleChange={handleChange}
-                />
-                <Question
-                  target={'goal'}
-                  question={'My goal for today is...'}
-                  content={goal}
-                  handleChange={handleChange}
-                />
-                <Tasks
-                  tasks={tasks}
-                  title='Tasks'
-                  handleTaskUpdate={handleTaskUpdate}
-                  handleTaskCheck={handleTaskCheck}
-                  handleAdd={handleAdd}
-                  handleTaskDelete={handleTaskDelete}
-                />
-                <Notes
-                  target={'notes'}
-                  notes={notes}
-                  title='Notes'
-                  handleChange={handleChange}
-                />
-              </main>
-            </Route>
-            <Route path='/about'>
-              <About
-                linkedIn={'https://www.linkedin.com/in/thnlsn/'}
-                gitHub={'https://github.com/thnlsn/mind-garden'}
+              <Question
+                target={'goal'}
+                question={'My goal for today is...'}
+                content={goal}
+                handleChange={handleChange}
               />
-            </Route>
-          </Switch>
-        </Router>
-      </div>
-    </Fragment>
+              <Tasks
+                tasks={tasks}
+                title='Tasks'
+                handleTaskUpdate={handleTaskUpdate}
+                handleTaskCheck={handleTaskCheck}
+                handleAdd={handleAdd}
+                handleTaskDelete={handleTaskDelete}
+              />
+              <Notes
+                target={'notes'}
+                notes={notes}
+                title='Notes'
+                handleChange={handleChange}
+              />
+            </main>
+          </Route>
+          <Route path='/about'>
+            <About
+              linkTarget={home}
+              linkedIn={'https://www.linkedin.com/in/thnlsn/'}
+              gitHub={'https://github.com/thnlsn/mind-garden'}
+            />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

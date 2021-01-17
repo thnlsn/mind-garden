@@ -2,16 +2,16 @@ import React, { Fragment } from 'react';
 import Socials from './Socials';
 import Leaf from '../icons/LeafIcon';
 
-const About = ({ linkedIn, gitHub }) => {
+const About = ({ linkTarget, linkedIn, gitHub }) => {
   return (
     <Fragment>
       <header className='header'>
-        <a href='/' className='heading-primary'>
+        <a href={linkTarget} className='heading-primary'>
           Mind Garden
           <Leaf />
         </a>
         <div className='sub-heading'>
-          <a href='/' className='link link--left'>
+          <a href='/mind-garden' className='link link--left'>
             <span className='link__arrow-left'>&larr;</span> Back
           </a>
           A little gratitude can go a long way.
