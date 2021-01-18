@@ -99,11 +99,17 @@ function App() {
     const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
     const notes = JSON.parse(localStorage.getItem('notes'));
 
-    // If that data exists, set state to it, else set it to empty state
-    grateful ? setGrateful(grateful) : setGrateful('');
-    goal ? setGoal(goal) : setGoal('');
-    tasks ? setTasks(tasks) : setTasks([]);
-    notes ? setNotes(notes) : setNotes('');
+    grateful
+      ? setGrateful(grateful)
+      : localStorage.setItem('grateful', JSON.stringify(''));
+    goal ? setGoal(goal) : localStorage.setItem('goal', JSON.stringify(''));
+    tasks ? setTasks(tasks) : localStorage.setItem('tasks', JSON.stringify([]));
+    notes ? setNotes(notes) : localStorage.setItem('notes', JSON.stringify(''));
+
+    /*     localStorage.setItem('grateful', JSON.stringify(''));
+    localStorage.setItem('goal', JSON.stringify(''));
+    localStorage.setItem('tasks', JSON.stringify([]));
+    localStorage.setItem('notes', JSON.stringify('')); */
   }, []);
 
   const home = '/mind-garden';
