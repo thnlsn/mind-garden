@@ -10,16 +10,17 @@ const Header = ({
   homeLink,
   aboutLink,
   clearData,
+  setAllState,
 }) => {
   return (
     <header className='header'>
-      <Link to={homeLink} className='heading-primary'>
+      <Link to={homeLink} onClick={setAllState} className='heading-primary'>
         <span className='header__text'>{title}</span>
         <Leaf />
       </Link>
       <div className='sub-heading'>
         {subtitle}
-        <Link to={aboutLink} className='link link--right'>
+        <Link to={aboutLink} onClick={setAllState} className='link link--right'>
           {linkText} <span className='link__arrow-right'>&rarr;</span>
         </Link>
       </div>

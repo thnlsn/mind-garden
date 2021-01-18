@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/style.css';
 
@@ -15,6 +15,22 @@ function App() {
   const [goal, setGoal] = useState('');
   const [tasks, setTasks] = useState([]);
   const [notes, setNotes] = useState('');
+
+  const setAllState = () => {
+    // Store each piece of local data into a const
+    const grateful = JSON.parse(localStorage.getItem('grateful'));
+    const goal = JSON.parse(localStorage.getItem('goal'));
+    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
+    const notes = JSON.parse(localStorage.getItem('notes'));
+
+    // If there is data, set state to reflect that, otherwise allow everything to be empty and set localStorage state to correct empty values so that inputs have a baseline to add to
+    grateful
+      ? setGrateful(grateful)
+      : localStorage.setItem('grateful', JSON.stringify(''));
+    goal ? setGoal(goal) : localStorage.setItem('goal', JSON.stringify(''));
+    tasks ? setTasks(tasks) : localStorage.setItem('tasks', JSON.stringify([]));
+    notes ? setNotes(notes) : localStorage.setItem('notes', JSON.stringify(''));
+  };
 
   const clearData = async () => {
     const confirmed = windowGlobal.confirm(
@@ -78,6 +94,7 @@ function App() {
     // Set both state and local storage to the new value
 
     localStorage.setItem('tasks', JSON.stringify(tasks));
+
     setTasks(tasks);
   };
 
@@ -93,18 +110,10 @@ function App() {
   };
 
   useEffect(() => {
-    // Store each piece of local data into a const
-    const grateful = JSON.parse(localStorage.getItem('grateful'));
-    const goal = JSON.parse(localStorage.getItem('goal'));
-    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
-    const notes = JSON.parse(localStorage.getItem('notes'));
+    console.log('useEffect');
 
-    grateful
-      ? setGrateful(grateful)
-      : localStorage.setItem('grateful', JSON.stringify(''));
-    goal ? setGoal(goal) : localStorage.setItem('goal', JSON.stringify(''));
-    tasks ? setTasks(tasks) : localStorage.setItem('tasks', JSON.stringify([]));
-    notes ? setNotes(notes) : localStorage.setItem('notes', JSON.stringify(''));
+    // Store each piece of local data into a const
+    setAllState();
 
     /*     localStorage.setItem('grateful', JSON.stringify(''));
     localStorage.setItem('goal', JSON.stringify(''));
@@ -127,6 +136,7 @@ function App() {
               homeLink={home}
               aboutLink={about}
               clearData={clearData}
+              setAllState={setAllState}
             />
             <main className='planner'>
               <Question
