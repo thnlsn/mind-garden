@@ -18,18 +18,46 @@ function App() {
 
   const setAllState = () => {
     // Store each piece of local data into a const
-    const grateful = JSON.parse(localStorage.getItem('grateful'));
-    const goal = JSON.parse(localStorage.getItem('goal'));
-    const tasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
-    const notes = JSON.parse(localStorage.getItem('notes'));
+    const localGrateful = JSON.parse(localStorage.getItem('grateful'));
+    const localGoal = JSON.parse(localStorage.getItem('goal'));
+    const localTasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
+    const localNotes = JSON.parse(localStorage.getItem('notes'));
 
-    // If there is data, set state to reflect that, otherwise allow everything to be empty and set localStorage state to correct empty values so that inputs have a baseline to add to
-    grateful
-      ? setGrateful(grateful)
-      : localStorage.setItem('grateful', JSON.stringify(''));
-    goal ? setGoal(goal) : localStorage.setItem('goal', JSON.stringify(''));
-    tasks ? setTasks(tasks) : localStorage.setItem('tasks', JSON.stringify([]));
-    notes ? setNotes(notes) : localStorage.setItem('notes', JSON.stringify(''));
+    // If there is data, set state to reflect that, otherwise allow everything to be empty and set localStorage and state to correct empty values so that inputs have a baseline to add to, because pushing values to something like null or undefined will crash the site
+    if (localGrateful) {
+      setGrateful(localGrateful);
+    } else {
+      localStorage.setItem('grateful', JSON.stringify(''));
+      setGrateful('');
+    }
+    if (localGoal) {
+      setGoal(localGoal);
+    } else {
+      localStorage.setItem('grateful', JSON.stringify(''));
+      setGoal('');
+    }
+    if (localTasks) {
+      setTasks(localTasks);
+    } else {
+      localStorage.setItem('grateful', JSON.stringify([]));
+      setTasks([]);
+    }
+    if (localNotes) {
+      setNotes(localNotes);
+    } else {
+      localStorage.setItem('grateful', JSON.stringify(''));
+      setNotes('');
+    }
+
+    /*     localGoal
+      ? setGoal(localGoal)
+      : localStorage.setItem('goal', JSON.stringify(''));
+    localTasks
+      ? setTasks(localTasks)
+      : localStorage.setItem('tasks', JSON.stringify([]));
+    localNotes
+      ? setNotes(localNotes)
+      : localStorage.setItem('notes', JSON.stringify('')); */
   };
 
   const clearData = async () => {
