@@ -180,12 +180,9 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     transform: var(--reset-position);
     background-color: var(--color-dashboard);
     border: var(--border);
-    overflow: visible;
+    overflow-x: visible;
+    overflow-y: visible;
     border-radius: 50%; }
-    @supports not (overflow: visible) {
-      .icon--reset {
-        overflow-x: visible;
-        overflow-y: visible; } }
     .icon--reset > path {
       opacity: 0.8;
       transform: translateX(1px); }
@@ -382,7 +379,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   min-height: 90vh;
   display: grid;
   grid-template-rows: min-content;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   border-radius: 2.4rem;
   background: var(--background);
   /* backdrop-filter: blur(100px); */
@@ -399,10 +397,6 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
       border-radius: 0; } }
   .dashboard .about {
     grid-template-rows: min-content min-content 1fr; }
-  @supports not (overflow: hidden) {
-    .dashboard {
-      overflow-x: hidden;
-      overflow-y: hidden; } }
 
 .header {
   display: flex;
