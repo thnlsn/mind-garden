@@ -41,13 +41,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  /* gap: 1.5rem; // Remove the margin bottom on the main heading and add this if gap gets flexbox support on ios+safari
 
   @supports not (gap: 1px) {
     a {
       margin-bottom: 1.5rem;
     }
-  }
+  } */
 
   padding: var(--dashboard-padding);
   @media only screen and (max-width: $bp-medium) {
@@ -167,12 +167,13 @@
 
 .socials {
   justify-self: center;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
 
-  @supports not (gap: 1px) {
+  /*   @supports not (gap: 1px) {
     & > *:not(:last-child) {
       margin-right: 2rem;
     }
-  }
+  } */
 }

@@ -10,6 +10,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   text-align: center;
   white-space: nowrap;
 
+  margin-bottom: 1.5rem; // Because gap doesnt work with flexbox on ios and safari
+
   @media only screen and (max-width: $bp-phone-large) {
     font-size: 6rem;
     padding-top: 1rem;
@@ -121,6 +123,9 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
 .icon {
   fill: var(--color-font);
   cursor: pointer;
+  @media (pointer: coarse) {
+    cursor: auto;
+  }
   display: inline-block;
 
   transition: all 0.2s ease-in-out;
