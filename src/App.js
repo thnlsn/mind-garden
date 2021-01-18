@@ -110,9 +110,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('useEffect');
-
-    // Store each piece of local data into a const
     setAllState();
 
     /*     localStorage.setItem('grateful', JSON.stringify(''));
