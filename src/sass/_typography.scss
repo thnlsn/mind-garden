@@ -151,6 +151,7 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     position: absolute;
     top: 1.55rem;
     right: 1.75rem;
+    cursor: 'pointer';
   }
 
   &--reset {
@@ -166,10 +167,9 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     background-color: var(--color-dashboard);
     border: var(--border);
 
+    border-radius: 50%;
     overflow-x: visible;
     overflow-y: visible;
-
-    border-radius: 50%;
 
     & > path {
       opacity: 0.8;

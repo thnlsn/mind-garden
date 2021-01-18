@@ -170,7 +170,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   .icon--add {
     position: absolute;
     top: 1.55rem;
-    right: 1.75rem; }
+    right: 1.75rem;
+    cursor: 'pointer'; }
   .icon--reset {
     position: absolute;
     bottom: 0;
@@ -180,9 +181,9 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     transform: var(--reset-position);
     background-color: var(--color-dashboard);
     border: var(--border);
+    border-radius: 50%;
     overflow-x: visible;
-    overflow-y: visible;
-    border-radius: 50%; }
+    overflow-y: visible; }
     .icon--reset > path {
       opacity: 0.8;
       transform: translateX(1px); }
