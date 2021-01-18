@@ -10,7 +10,6 @@ const AddIcon = ({ handleAdd }) => {
       viewBox='0 0 24 24'
       className='icon icon--add'
       onClick={handleAdd}
-      onTouchStart={handleAdd}
     >
       <path d='M24 10H14V0h-4v10H0v4h10v10h4V14h10v-4z'></path>
     </svg>
