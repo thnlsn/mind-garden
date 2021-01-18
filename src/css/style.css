@@ -44,6 +44,7 @@ html {
   box-sizing: inherit; }
 
 body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-image: url("../images/background.png");
   background-color: var(--color-primary);
   background-size: cover;
@@ -156,9 +157,8 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
   cursor: pointer;
   display: inline-block;
   transition: all 0.2s ease-in-out; }
-  @media (pointer: coarse) {
-    .icon {
-      cursor: auto; } }
+  .icon svg {
+    cursor: pointer; }
   .icon--delete, .icon--add, .icon--social {
     opacity: 0.65; }
     .icon--delete:hover, .icon--add:hover, .icon--social:hover {

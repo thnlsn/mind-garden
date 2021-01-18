@@ -10,6 +10,7 @@ const AddIcon = ({ handleAdd }) => {
       viewBox='0 0 24 24'
       className='icon icon--add'
       onClick={handleAdd}
+      onTouchStart={handleAdd}
     >
       <path
         fill='url(#paint0_linear)'
