@@ -17,11 +17,23 @@ function App() {
   const [notes, setNotes] = useState('');
 
   const setAllState = () => {
+    console.log('setAllState');
     // Store each piece of local data into a const
     const localGrateful = JSON.parse(localStorage.getItem('grateful'));
     const localGoal = JSON.parse(localStorage.getItem('goal'));
     const localTasks = JSON.parse(localStorage.getItem('tasks')); // Current tasks
     const localNotes = JSON.parse(localStorage.getItem('notes'));
+
+    console.log(localGrateful);
+    console.log(localGoal);
+    console.log(localTasks);
+    console.log(localNotes);
+
+    if (localGrateful) {
+      console.log('localGrateful true state');
+    } else {
+      console.log('localGrateful false state');
+    }
 
     // If there is data, set state to reflect that, otherwise allow everything to be empty and set localStorage and state to correct empty values so that inputs have a baseline to add to, because pushing values to something like null or undefined will crash the site
     if (localGrateful) {
@@ -33,19 +45,19 @@ function App() {
     if (localGoal) {
       setGoal(localGoal);
     } else {
-      localStorage.setItem('grateful', JSON.stringify(''));
+      localStorage.setItem('goal', JSON.stringify(''));
       setGoal('');
     }
     if (localTasks) {
       setTasks(localTasks);
     } else {
-      localStorage.setItem('grateful', JSON.stringify([]));
+      localStorage.setItem('tasks', JSON.stringify([]));
       setTasks([]);
     }
     if (localNotes) {
       setNotes(localNotes);
     } else {
-      localStorage.setItem('grateful', JSON.stringify(''));
+      localStorage.setItem('notes', JSON.stringify(''));
       setNotes('');
     }
 
