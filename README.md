@@ -1,8 +1,8 @@
 # Mind Garden
 
- <!-- <p align="center">
-  <img src="../assets/Hyker | Large.gif?raw=true" />
-</p> -->
+<p align="center">
+  <img src="../assets/Mind Garden.gif?raw=true" />
+</p>
 
 <!-- ABOUT THE PROJECT -->
 
