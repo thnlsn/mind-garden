@@ -20,7 +20,8 @@
   );
   --background-tertiary: rgba(255, 255, 255, 0.1);
   --reset-position: translate(0, calc(var(--size) / 2 - 0.25rem));
-  --size: 4.5rem; }
+  --size: 4.5rem;
+  --placeholder-opacity: 0.3; }
 
 /* --color-primary-light: #9ef060; */
 html {
@@ -315,15 +316,15 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -25px, rgba(0, 0, 0, 0.04) 0px 10px 10px -10px;
     border-bottom-right-radius: 2.5px;
     border-bottom-left-radius: 2.5px;
-    padding: 0 0.5rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
     cursor: text; }
     .question__input:focus {
       box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 6px -6px, rgba(0, 0, 0, 0.06) 0px 4px 4px -4px; }
     .question__input--grateful:empty::before {
-      opacity: 0.2;
+      opacity: var(--placeholder-opacity);
       content: 'Try to make it something different than yesterday.'; }
     .question__input--goal:empty::before {
-      opacity: 0.2;
+      opacity: var(--placeholder-opacity);
       content: 'Let this be the one thing you will get done today \2013  no matter what.'; }
 
 .content-box {
@@ -364,7 +365,7 @@ font-family: 'Montserrat Alternates', sans-serif; ----- 100;300;400;500;600;700
     cursor: text;
     transition: all 0.25s; }
     .task__input:empty::before {
-      opacity: 0.2;
+      opacity: var(--placeholder-opacity);
       content: 'Keep it specific and attainable.'; }
     .task__input:focus {
       background-color: var(--background-tertiary); }

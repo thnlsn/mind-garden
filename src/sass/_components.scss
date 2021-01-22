@@ -35,17 +35,17 @@
     // border-bottom: 1px solid var(--color-primary-light);
     border-bottom-right-radius: 2.5px;
     border-bottom-left-radius: 2.5px;
-    padding: 0 0.5rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
 
     cursor: text;
 
     &--grateful:empty::before {
-      opacity: 0.2;
+      opacity: var(--placeholder-opacity);
       content: 'Try to make it something different than yesterday.';
     }
 
     &--goal:empty::before {
-      opacity: 0.2;
+      opacity: var(--placeholder-opacity);
       content: 'Let this be the one thing you will get done today \2013  no matter what.';
     }
   }
@@ -109,7 +109,7 @@
     cursor: text;
 
     &:empty::before {
-      opacity: 0.2;
+      opacity: var(--placeholder-opacity);
       content: 'Keep it specific and attainable.';
     }
 
